@@ -1,0 +1,27 @@
+.navbar {
+    position: fixed;  /* Fixed position */
+    margin-top: 180px;
+    top: 150;
+    right: 0;
+    width: 150px;
+    height: 70%;
+    border-left: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Remove transform and transform-origin temporarily */
+  }
+  
+  .navbar li {
+    color: white;
+    cursor: pointer;
+    margin: 150px 0;
+    /* Remove text rotation and other styles temporarily */
+  }

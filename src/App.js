@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link, Element } from 'react-scroll';
+import NavBar from './NavBar';
 import HomePage from './HomePage';
 import About from './About';
 import Experiences from './Experiences';
 import Projects from './Projects';
 import Contact from './Contact';
+import './app.css'
+import './homepage.css'
+import './navbar.css'
 
 function App() {
   return (
     <div className="App">
-      <nav className="navbar">
-        <Link to="home" smooth={true}>Home</Link>
-        <Link to="about" smooth={true}>About</Link>
-        <Link to="experiences" smooth={true}>Experiences</Link>
-        <Link to="projects" smooth={true}>Projects</Link>
-        <Link to="contact" smooth={true}>Contact</Link>
-      </nav>
+      <Element name="navbar">
+        <NavBar />
+      </Element>
       <Element name="home">
         <HomePage />
       </Element>
