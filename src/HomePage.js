@@ -3,7 +3,6 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { AnimationMixer } from 'three';
 import './homepage.css'; // Import the CSS
-import About from './About';
 
 const Model = () => {
   const gltf = useLoader(GLTFLoader, '/name.glb'); 
@@ -30,7 +29,6 @@ const HomePage = () => {
         <spotLight position={[10, 10, 10]} angle={.15} penumbra={1} />
         <pointLight position={[0, 0, 0]} />
         <Model />
-        <About />
       </Canvas>
       <div className="navbar">
         <ul>

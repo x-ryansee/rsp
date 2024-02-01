@@ -1,12 +1,12 @@
 import React from 'react';
 
-const About = () => {
+const Projects = () => {
   return (
     <div>
-      <h1>About</h1>
+      <h1>Projects</h1>
       {/* Additional content goes here */}
     </div>
   );
 };
 
-export default About;
+export default Projects;
