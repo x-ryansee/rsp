@@ -4,8 +4,8 @@
   }
 
   .card {
-    width: 80%;
-    height: 50%;
+    width: 56%;
+    height: 56%;
     background-color: rgba(255, 255, 255, 0.1); /* For a slight discoloration */
     color: white;
     padding: 20px;
@@ -23,12 +23,29 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Adjust to the height of the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
   }
 
+  .card-content {
+    color: #f5f5f5; /* Light text color for contrast */
+
+    font-size: 2.5rem; /* Adjust font size as needed */
+  }
   .card-title {
     position: absolute;
-    top: -20px; /* Adjust this value to move it higher above the top edge of the card */
-    left: 50px;
+    top: 200px; /* Adjust this value to move it higher above the top edge of the card */
+    left: -90px;
+    font-size: 5rem;
     transform: translate(0, -50%);
-    background: inherit;
   }
+  .card-content p {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    font-weight: 300; /* Light font weight for a modern look */
+  }
+  
+  .card-content strong {
+    color: #cd0000; /* Highlight color for important text */
+    font-weight: 600; /* Bold font weight for emphasis */
+  }
+  
+  

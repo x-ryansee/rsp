@@ -36,3 +36,9 @@
   color: #cd0000;
   text-decoration:rgb(123, 123, 123) /* or any other style to indicate active state */
 }
+
+/* Hide section names by default and only show the active or hovered item */
+.navbar li:not(.active):not(:hover)::after {
+  content: '';
+  /* Add more styles if needed */
+}

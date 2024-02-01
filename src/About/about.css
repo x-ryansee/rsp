@@ -1,0 +1,20 @@
+.about-button {
+    font-family: 'Permanent Marker', cursive;
+    position: fixed;
+    top: 50%; /* Adjust the top position as needed */
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #000000; /* Set your desired background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 2rem;
+    rotate: 270deg;
+  }
+  
+  .about-button:hover {
+    color: #555; /* Change color on hover */
+  }
+  

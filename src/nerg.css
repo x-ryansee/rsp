@@ -1,0 +1,41 @@
+/* Specify the font using a URL from the public folder */
+  
+  /* Rest of your CSS styles remain the same */
+  .section {
+    height: 100vh;
+    /* Other styling */
+  }
+  
+  .nergcard {
+    width: 56%;
+    height: 56%;
+    background-image: url('../public/Nerg.png'); /* Replace with the actual image path */
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    /* Center the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'MontserratAlternatesMedium', sans-serif; /* Apply the imported font */
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust to the height of the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  }
+  
+  /* Rest of your CSS styles... */
+  
+  .card-image {
+  max-width: 100%; /* Ensure the image does not exceed the card's width */
+  max-height: 100%; /* Ensure the image does not exceed the card's height */
+  object-fit: contain; /* Maintain aspect ratio and fit within the container */
+}

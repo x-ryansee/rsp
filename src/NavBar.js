@@ -1,16 +1,41 @@
-import React from 'react';
-import { Link } from 'react-scroll'; // Ensure react-scroll is installed
-import './navbar.css'
+import React, { useState, useEffect } from 'react';
+import { Link, Events } from 'react-scroll';
+import './navbar.css';
+
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Blinkcore", "TourTracker"];
 
 const Navbar = () => {
+    const [activeSection, setActiveSection] = useState('');
+    const [isHovering, setIsHovering] = useState(false);
+  
+    // Setup scroll event
+    Events.scrollEvent.register('begin', function (to, element) {
+      setActiveSection(to);
+    });
+
+    // Clean up scroll event
+    React.useEffect(() => {
+      return () => {
+        Events.scrollEvent.remove('begin');
+      };
+    }, []);
+
   return (
-    <div className="navbar">
+    <div className="navbar" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
       <ul>
-        <li><Link to="home" smooth={true}>Home</Link></li>
-        <li><Link to="about" smooth={true}>About</Link></li>
-        <li><Link to="experiences" smooth={true}>Experience</Link></li>
-        <li><Link to="projects" smooth={true}>Projects</Link></li>
-        <li><Link to="contact" smooth={true}>Contact</Link></li>
+        {sections.map((section) => (
+          <li key={section} className={activeSection === section ? 'active' : ''}>
+            <Link
+              activeClass="active"
+              to={section}
+              spy={true}
+              smooth={true}
+              onSetActive={() => setActiveSection(section)}
+            >
+              {isHovering || activeSection === section ? section.charAt(0).toUpperCase() + section.slice(1) : ''}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -3,11 +3,8 @@ import './app.css'; // Make sure you have an Contact.css file with the card styl
 
 const Contact = () => {
   return (
-    <div className="card-container">
-      <div className="card" data-aos="fade-up" data-aos-anchor-placement="top-center">
-      <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Contact</h1>
-        {/* Additional content goes here */}
-      </div>
+    <div>
+        <h1>Contact</h1>
     </div>
   );
 };
