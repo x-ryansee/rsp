@@ -85,3 +85,9 @@
   background-size: cover; /* Adjust background sizing as needed */
   /* Other styles for this card if necessary */
 }
+
+.card-teampass {
+  background-image: url('../public/Teampass.png'); /* Replace 'Nerg.png' with the actual image path */
+  background-size: cover; /* Adjust background sizing as needed */
+  /* Other styles for this card if necessary */
+}

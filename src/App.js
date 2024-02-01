@@ -6,7 +6,7 @@ import Nerg from './Nerg';
 import Idylls from './Idylls';
 import CarbonHero from './CarbonHero';
 import TalesAI from './TalesAI';
-import Blinkcore from './Blinkcore';
+import Teampass from './Teampass';
 import TourTracker from './TourTracker';
 import About from './About/About';
 import AboutPopup from './About/AboutPopup';
@@ -18,7 +18,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Blinkcore", "TourTracker"];
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
 
 function App() {
   const [showAboutPopup, setShowAboutPopup] = useState(false);
@@ -107,8 +107,8 @@ function App() {
       <Element name="TalesAI" className="section">
         <TalesAI />
       </Element>
-      <Element name="Blinkcore" className="section">
-        <Blinkcore />
+      <Element name="Teampass" className="section">
+        <Teampass />
       </Element>
       <Element name="TourTracker" className="section">
         <TourTracker />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Events } from 'react-scroll';
 import './navbar.css';
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Blinkcore", "TourTracker"];
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
 
 const Navbar = () => {
     const [activeSection, setActiveSection] = useState('');
