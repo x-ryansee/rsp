@@ -2,3 +2,33 @@
     height: 100vh;
     /* Other styling */
   }
+
+  .card {
+    width: 80%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.1); /* For a slight discoloration */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    /* Center the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust to the height of the section */
+  }
+
+  .card-title {
+    position: absolute;
+    top: -20px; /* Adjust this value to move it higher above the top edge of the card */
+    left: 50px;
+    transform: translate(0, -50%);
+    background: inherit;
+  }

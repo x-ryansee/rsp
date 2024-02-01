@@ -17,3 +17,6 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Put this at the top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');

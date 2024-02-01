@@ -1,27 +1,38 @@
 .navbar {
-    position: fixed;  /* Fixed position */
-    margin-top: 180px;
-    top: 150;
-    right: 0;
-    width: 150px;
-    height: 70%;
-    border-left: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    /* Remove transform and transform-origin temporarily */
-  }
-  
-  .navbar li {
-    color: white;
-    cursor: pointer;
-    margin: 150px 0;
-    /* Remove text rotation and other styles temporarily */
-  }
+  font-family: 'Permanent Marker', cursive;
+  position: fixed;
+  top: 180px;
+  right: 5%;
+  width: 150px;
+  height: 70%;
+  border-left: .5px solid rgb(123, 123, 123);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; /* Align text to the right */
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  color: white;
+  cursor: pointer;
+  margin: 50px 0; /* Adjusted margin */
+  font-size: 1.2em; /* Increased font size */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar li:hover {
+  color: #aaa; /* Change color on hover */
+}
+
+/* Additional CSS for active section */
+.navbar li.active {
+  color: #cd0000;
+  text-decoration:rgb(123, 123, 123) /* or any other style to indicate active state */
+}

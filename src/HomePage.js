@@ -23,7 +23,7 @@ const Model = () => {
 
 const HomePage = () => {
   return (
-    <Canvas className="model-canvas"
+    <Canvas className="model-canvas" data-aos="fade-up" data-aos-offset="200" data-aos-once="true"
             camera={{ position: [-5, 2, 5], fov: 50 }}>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={.15} penumbra={1} />
