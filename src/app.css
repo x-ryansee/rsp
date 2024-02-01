@@ -1,51 +1,87 @@
+/* Specify the font using a URL from the public folder */
+
+/* Rest of your CSS styles remain the same */
 .section {
-    height: 100vh;
-    /* Other styling */
-  }
+  height: 100vh;
+  /* Other styling */
+}
 
-  .card {
-    width: 56%;
-    height: 56%;
-    background-color: rgba(255, 255, 255, 0.1); /* For a slight discoloration */
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    /* Center the card */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+.card {
+  width: 100%; /* Adjust to the desired width */
+  height: 100%; /* Adjust to the desired height */
+  background-color: rgba(255, 255, 255, 0.1); /* For a slight discoloration */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  /* Center the card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'MontserratAlternatesMedium', sans-serif; /* Apply the imported font */
+}
 
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust to the height of the section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  }
+.card-container {
+  width: 56%; /* Cover the entire width of the parent (.section) */
+  height: 56%; /* Cover the entire viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  margin: 0 auto; /* Center horizontally within .section */
+  /* Other background styles */
+}
 
-  .card-content {
-    color: #f5f5f5; /* Light text color for contrast */
+.card-title {
+  position: absolute;
+  top: 200px; /* Adjust this value to move it higher above the top edge of the card */
+  left: -90px;
+  font-size: 6rem;
+  transform: translate(0, -50%);
+  opacity: 1; /* Initial opacity for the title */
+  transition: opacity 0.3s ease; /* Add a transition for smooth opacity change */
+  z-index: 2; /* Ensure title is above overlay */
+}
 
-    font-size: 2.5rem; /* Adjust font size as needed */
-  }
-  .card-title {
-    position: absolute;
-    top: 200px; /* Adjust this value to move it higher above the top edge of the card */
-    left: -90px;
-    font-size: 5rem;
-    transform: translate(0, -50%);
-  }
-  .card-content p {
-    margin-bottom: 15px; /* Spacing between paragraphs */
-    font-weight: 300; /* Light font weight for a modern look */
-  }
-  
-  .card-content strong {
-    color: #cd0000; /* Highlight color for important text */
-    font-weight: 600; /* Bold font weight for emphasis */
-  }
-  
-  
+.card-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Overlay background with desired opacity */
+  opacity: 1; /* Initial opacity for overlay (hidden) */
+  transition: opacity 0.3s ease; /* Add a transition for smooth opacity change */
+  z-index: 1; /* Ensure overlay is below title */
+}
+
+.card-content {
+  color: #f5f5f5; /* Light text color for contrast */
+  font-size: 2.5rem; /* Adjust font size as needed */
+  font-weight: 300; /* Light font weight for a modern look */
+}
+
+.card-content strong {
+  color: #cd0000; /* Highlight color for important text */
+  font-weight: 600; /* Bold font weight for emphasis */
+}
+
+/* Hover effect */
+.card-container:hover:before {
+  opacity: .5; /* Show overlay on hover */
+}
+
+.card-container:hover .card-title {
+  opacity: 0.7; /* Reduce opacity when hovering over the card */
+}
+
+
+/* Add a unique class for the Nerg card */
+.card-nerg {
+  background-image: url('../public/Nerg.png'); /* Replace 'Nerg.png' with the actual image path */
+  background-size: cover; /* Adjust background sizing as needed */
+  /* Other styles for this card if necessary */
+}

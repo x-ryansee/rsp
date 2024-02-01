@@ -1,23 +1,19 @@
 import React from 'react';
-import './nerg.css'; // Make sure you have a 'Nerg.css' file for the card styles
+import './app.css';
 
 const Nerg = () => {
   return (
     <div className="card-container">
-      <div className="nergcard" data-aos="fade-up" data-aos-anchor-placement="top-center">
-        {/* The background image */}
-      </div>
-      <div className="card-title-container">
-        <div className="card-title">NERG</div>
-      </div>
-      <div className="card-content" data-aos="fade-up" data-aos-anchor-placement="top-center">
-        {/* Card content */}
+      <div className="card card-nerg" data-aos="fade-up" data-aos-anchor-placement="top-center">
+        <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Nerg</h1>
+        {/* Additional content goes here */}
       </div>
     </div>
   );
 };
 
 export default Nerg;
+
 
 
 

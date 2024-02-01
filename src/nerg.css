@@ -21,21 +21,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    font-family: 'MontserratAlternatesMedium', sans-serif; /* Apply the imported font */
+    opacity: 0.7; /* Initial opacity */
+    transition: opacity 0.3s ease; /* Add a transition for smooth opacity change */
+    /* Other background styles */
   }
-  
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust to the height of the section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  }
-  
-  /* Rest of your CSS styles... */
-  
-  .card-image {
-  max-width: 100%; /* Ensure the image does not exceed the card's width */
-  max-height: 100%; /* Ensure the image does not exceed the card's height */
-  object-fit: contain; /* Maintain aspect ratio and fit within the container */
-}
