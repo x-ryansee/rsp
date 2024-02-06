@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, Element, Events, scrollSpy } from 'react-scroll';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
+import Portfolio from './Portfolio';
 import Nerg from './Nerg';
 import Idylls from './Idylls';
 import CarbonHero from './CarbonHero';
 import TalesAI from './TalesAI';
 import Teampass from './Teampass';
 import TourTracker from './TourTracker';
-import About from './About/About';
-import AboutPopup from './About/AboutPopup';
 import './app.css';
 import './homepage.css';
 import './navbar.css';
@@ -23,6 +22,7 @@ const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass",
 function App() {
 
   const [activeSection, setActiveSection] = useState('home');
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const handleScroll = (event) => {
     event.preventDefault(); // Prevent the default scroll behavior
@@ -42,6 +42,12 @@ function App() {
       currentIndex += 1;
     } else if (direction === "up" && currentIndex > 0) {
       currentIndex -= 1;
+    }
+
+    if (currentIndex === 1 && !isZoomed) {
+      setIsZoomed(true);
+    } else if (currentIndex === 0 && isZoomed) {
+      setIsZoomed(false);
     }
   
     // Calculate the newY position to scroll to
@@ -97,8 +103,11 @@ function App() {
       <Element name="navbar">
         <NavBar activeSection={activeSection} />
       </Element>
-      <Element name="home">
+      <Element name="home" className={isZoomed ? 'zoomed-home' : ''}>
         <HomePage />
+      </Element>
+      <Element name="portfolio" className="section">
+        <Portfolio isZoomed={isZoomed} />
       </Element>
       <Element name="Nerg" className="section">
         <Nerg />

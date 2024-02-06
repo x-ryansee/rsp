@@ -96,3 +96,11 @@
   /* Other styles for this card if necessary */
 }
 
+.zoomed-home {
+  transform: scale(0.5); /* Scale down to match card size */
+  transition: transform 0.5s ease; /* Smooth transition */
+  width: 100%; /* Adjust based on your card container width */
+  height: 100vh; /* Adjust based on your card container height */
+  overflow: hidden; /* Hide overflow during transition */
+  /* Add more styling as needed to match the card container appearance */
+}
