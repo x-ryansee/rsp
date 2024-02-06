@@ -3,7 +3,8 @@
 /* Rest of your CSS styles remain the same */
 .section {
   height: 100vh;
-  /* Other styling */
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
 }
 
 .card {

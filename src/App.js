@@ -34,33 +34,47 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   const handleScroll = (event) => {
+    event.preventDefault(); // Prevent the default scroll behavior
+  
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
     const deltaY = event.deltaY;
-
-    // Calculate the current section index
-    const currentIndex = sections.indexOf(activeSection);
-
-    // Determine the new section index based on scroll direction
-    let newIndex = currentIndex;
-    if (deltaY > 0) {
-      // Scrolling down
-      if (currentIndex < sections.length - 1) {
-        newIndex = currentIndex + 1;
-      }
-    } else if (deltaY < 0) {
-      // Scrolling up
-      if (currentIndex > 0) {
-        newIndex = currentIndex - 1;
-      }
+  
+    // Determine the direction of the scroll
+    const direction = deltaY > 0 ? "down" : "up";
+  
+    // Calculate the current section index based on scrollY and windowHeight
+    let currentIndex = Math.round(scrollY / windowHeight);
+  
+    // Adjust the index based on the direction
+    if (direction === "down" && currentIndex < sections.length - 1) {
+      currentIndex += 1;
+    } else if (direction === "up" && currentIndex > 0) {
+      currentIndex -= 1;
     }
-
-    // Update the active section
-    if (newIndex !== currentIndex) {
-      setActiveSection(sections[newIndex]);
-      event.preventDefault(); // Prevent default scroll behavior
-    }
+  
+    // Calculate the newY position to scroll to
+    const newY = currentIndex * windowHeight;
+  
+    // Use window.scrollTo for a smooth transition to the new section
+    window.scrollTo({
+      top: newY,
+      behavior: 'smooth'
+    });
+  
+    // Update the active section state
+    setActiveSection(sections[currentIndex]);
   };
+  
+  // Don't forget to adjust your useEffect hook to use the updated handleScroll
+  useEffect(() => {
+    window.addEventListener('wheel', handleScroll, { passive: false });
+  
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [handleScroll]); // Add handleScroll to the dependency array to re-bind the event listener if the function changes
+  
 
   useEffect(() => {
     // Register scroll event listener for the whole document
