@@ -17,13 +17,29 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
+const sections = ["home", "Portfolio", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
 
 function App() {
 
   const [activeSection, setActiveSection] = useState('home');
   const [isZoomed, setIsZoomed] = useState(false);
 
+  const createRipple = (event) => {
+    const button = event.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    circle.classList.add('ripple');
+    const ripple = button.getElementsByClassName('ripple')[0];
+    if (ripple) {
+      ripple.remove();
+    }
+    button.appendChild(circle);
+  };
+  
   const handleScroll = (event) => {
     event.preventDefault(); // Prevent the default scroll behavior
   
@@ -106,25 +122,25 @@ function App() {
       <Element name="home" className={isZoomed ? 'zoomed-home' : ''}>
         <HomePage />
       </Element>
-      <Element name="portfolio" className="section">
+      <Element name="Portfolio" className="section" onMouseOver={createRipple}>
         <Portfolio isZoomed={isZoomed} />
       </Element>
-      <Element name="Nerg" className="section">
+      <Element name="Nerg" className="section" onMouseOver={createRipple}>
         <Nerg />
       </Element>
-      <Element name="Idylls" className="section">
+      <Element name="Idylls" className="section" onMouseOver={createRipple}>
         <Idylls />
       </Element>
-      <Element name="CarbonHero" className="section">
+      <Element name="CarbonHero" className="section" onMouseOver={createRipple}>
         <CarbonHero />
       </Element>
-      <Element name="TalesAI" className="section">
+      <Element name="TalesAI" className="section" onMouseOver={createRipple}>
         <TalesAI />
       </Element>
-      <Element name="Teampass" className="section">
+      <Element name="Teampass" className="section" onMouseOver={createRipple}>
         <Teampass />
       </Element>
-      <Element name="TourTracker" className="section">
+      <Element name="TourTracker" className="section" onMouseOver={createRipple}>
         <TourTracker />
       </Element>
     </div>
