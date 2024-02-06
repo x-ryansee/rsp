@@ -21,15 +21,6 @@ AOS.init();
 const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
 
 function App() {
-  const [showAboutPopup, setShowAboutPopup] = useState(false);
-
-  const openAboutPopup = () => {
-    setShowAboutPopup(true);
-  };
-
-  const closeAboutPopup = () => {
-    setShowAboutPopup(false);
-  };
 
   const [activeSection, setActiveSection] = useState('home');
 
@@ -127,16 +118,6 @@ function App() {
       <Element name="TourTracker" className="section">
         <TourTracker />
       </Element>
-      {showAboutPopup && (
-        <div className="about-sticky">
-          <About />
-        </div>
-      )}
-      <button className="about-button" onClick={openAboutPopup}>
-        About
-      </button>
-      {/* Render the AboutPopup component */}
-      <AboutPopup isOpen={showAboutPopup} closePopup={closeAboutPopup} />
     </div>
   );
 }
