@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Element, Events, scrollSpy } from 'react-scroll';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
+import About from './About/About';
 import Nerg from './Nerg';
 import Idylls from './Idylls';
 import CarbonHero from './CarbonHero';
@@ -116,14 +117,19 @@ const handleScroll = (event) => {
 
   return (
     <div className="App">
-      {hasEntered && (
+    {hasEntered && (
+      <>
         <Element name="navbar">
           <NavBar activeSection={activeSection} />
         </Element>
-      )}
-      <Element name="home" className={isZoomed ? 'zoomed-home' : ''}>
-        <HomePage onEnter={() => setHasEntered(true)} />
-      </Element>
+        <Element name="about">
+          <About />
+        </Element>
+      </>
+    )}
+    <Element name="home" className={isZoomed ? 'zoomed-home' : ''}>
+      <HomePage onEnter={() => setHasEntered(true)} />
+    </Element>
       {hasEntered && (
         <>
           <Element name="Nerg" className="section" onMouseOver={createRipple}>
