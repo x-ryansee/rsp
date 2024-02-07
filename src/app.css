@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
   font-family: 'MontserratAlternatesMedium', sans-serif; /* Apply the imported font */
 }
 
@@ -37,6 +38,7 @@
   margin: 0 auto; /* Center horizontally within .section */
   overflow: hidden; /* This will contain the ripple within the card borders */
   position: relative; /* Required for absolute positioning of pseudo-elements */
+  z-index: 0;
 }
 
 .card-container::after {
@@ -51,7 +53,7 @@
   transform: scale(0) translate(-50%, -50%);
   transform-origin: center center;
   transition: transform 0.5s ease-out, opacity 0.3s ease;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none; /* Ignore mouse clicks */
 }
 
@@ -79,12 +81,13 @@
 
 
 .card-title {
+  font-family: 'Permanent Marker', cursive;
   position: absolute;
-  top: 200px; /* Adjust this value to move it higher above the top edge of the card */
-  left: -90px;
+  top: -140px; /* Adjust this value to move it higher above the top edge of the card */
+  left: -50px;
   font-size: 6rem;
   transform: translate(0, -50%);
-  opacity: 0.1; /* Very low initial opacity */
+  opacity: 0.7; /* Very low initial opacity */
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 2; /* Ensure title is above overlay */
 }
@@ -102,7 +105,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7); /* Assuming this is the normal state background */
-  opacity: 0; /* Make the overlay fully transparent by default */
+  opacity: .1; /* Make the overlay fully transparent by default */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
   z-index: 1; /* Below the card title */
 }
