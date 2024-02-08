@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './about.css'; // Styles for the About section
-import './aboutpopup.css'; // Styles for the About Popup
+import './about.css'; // Ensure this file contains your styles for the about section and button
+import './aboutpopup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -14,13 +14,16 @@ const About = () => {
 
   return (
     <div className="about-section">
-      <button className="about-button" onClick={togglePopup}>About Me</button>
+      {/* Conditional rendering for button text and functionality */}
+      <button className="about-button" onClick={togglePopup}>
+        {isOpen ? 'Close' : 'About Me'}
+      </button>
 
       {isOpen && (
         <div className="about-popup">
           <div className="card">
-            <h1 className="card-title" data-aos="fade-left" data-aos-anchor-placement="top-center">About</h1>
-            <div className="card-content" data-aos="fade-right" data-aos-anchor-placement="top-center">
+            <h1 className="card-title">About</h1>
+            <div className="card-content">
               <p><strong>Location:</strong> Los Angeles-based Developer</p>
               <p><strong>Education:</strong> Degree from Cal Poly - SLO, refined skills from Flatiron School, Google UX certified</p>
               <p><strong>Currently:</strong> Leading front-end mobile development at NERG</p>
@@ -37,9 +40,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <button className="close-button" onClick={togglePopup}>
-            Close
-          </button>
+          {/* Removed the standalone Close button inside the popup since it's now integrated with the About Me button */}
         </div>
       )}
     </div>

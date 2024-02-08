@@ -1,19 +1,33 @@
 .about-button {
-    font-family: 'Permanent Marker', cursive;
-    position: fixed;
-    top: 50%; /* Adjust the top position as needed */
-    left: 0;
-    transform: translateY(-50%);
-    background-color: #313131; /* Set your desired background color */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 2rem;
-    rotate: 270deg;
-  }
-  
-  .about-button:hover {
-    color: #555; /* Change color on hover */
-  }
+  font-family: 'Permanent Marker', cursive;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(270deg); /* Combined transformations */
+  background-color: #313131;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Corrected to single declaration */
+  font-size: 2rem;
+}
+
+.about-button:hover {
+  color: #FFFFFF; /* Consider a lighter color for better visibility */
+}
+
+.about-popup {
+  z-index: 1000;
+  /* Ensure you define dimensions, background, and positioning for the popup */
+  position: fixed; /* or absolute, depending on desired behavior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Example semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Other styles for content alignment and appearance */
+}

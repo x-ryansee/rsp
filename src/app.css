@@ -148,6 +148,13 @@
   background-size: cover; /* Adjust background sizing as needed */
   /* Other styles for this card if necessary */
 }
+
+.card-tourtracker {
+  background-image: url('../public/TourTracker.png'); /* Replace 'Nerg.png' with the actual image path */
+  background-size: cover; /* Adjust background sizing as needed */
+  /* Other styles for this card if necessary */
+}
+
 .canvas-container canvas {
   width: 100% !important;
   height: 100% !important;

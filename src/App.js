@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Element, Events, scrollSpy } from 'react-scroll';
+import { Element, Events, scrollSpy } from 'react-scroll';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
 import About from './About/About';
