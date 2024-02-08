@@ -6,6 +6,7 @@ const Teampass = () => {
     <div className="card-container">
       <div className="card card-teampass" data-aos="fade-up" data-aos-anchor-placement="top-center">
       <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Teampass</h1>
+      <h3 className="card-about">About Teampass</h3>
         {/* Additional content goes here */}
       </div>
     </div>
