@@ -78,7 +78,11 @@ const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDr
   return (
     <div className="scrollbar-container" ref={scrollbarContainerRef} onMouseDown={handleDragStart}>
       <div className="scrollbar-thumb" style={{ top: `${thumbPosition}px` }}>
-        <span className="scrollbar-label">{activeSection}</span>
+        <div className="scrollbar-content">
+          <span className="scrollbar-arrow up-arrow">^</span>
+          <span className="scrollbar-label">{activeSection}</span>
+          <span className="scrollbar-arrow down-arrow">^</span>
+        </div>
       </div>
     </div>
   );
