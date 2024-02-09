@@ -10,35 +10,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end; /* Align text to the right */
+  cursor: grab;
   z-index: 1000;
+}
+
+.navbar.dragging {
+  cursor: grabbing;
 }
 
 .navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  user-select: none;
 }
 
 .navbar li {
   color: white;
   cursor: pointer;
-  margin: 50px 0; /* Adjusted margin */
-  font-size: 1.2em; /* Increased font size */
-  transition: color 0.3s; /* Smooth transition for hover effect */
+  margin: 20px 0;
+  font-size: 1.2em;
+  transition: color 0.3s, transform 0.2s ease;
+  opacity: 0; /* Hide all by default */
+  pointer-events: none; /* Disable events for hidden elements */
 }
 
-.navbar li:hover {
-  color: #aaa; /* Change color on hover */
-}
-
-/* Additional CSS for active section */
 .navbar li.active {
-  color: #cd0000;
-  text-decoration:rgb(123, 123, 123) /* or any other style to indicate active state */
+  opacity: 1; /* Show only the active section's name */
+  pointer-events: auto; /* Enable events for active element */
+  cursor: grabbing; /* Indicate the active element is draggable */
 }
 
-/* Hide section names by default and only show the active or hovered item */
-.navbar li:not(.active):not(:hover)::after {
-  content: '';
-  /* Add more styles if needed */
+/* Style for the active section when dragging */
+.navbar li.active.dragging {
+  color: #cd0000; /* Change color or add more styles for dragging state */
+}
+
+.section {
+  height: 100vh; /* Ensure your sections are full height for correct scrolling */
 }

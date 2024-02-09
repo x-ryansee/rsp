@@ -6,6 +6,7 @@ const TourTracker = () => {
     <div className="card-container">
       <div className="card card-tourtracker" data-aos="fade-up" data-aos-anchor-placement="top-center">
       <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">TourTracker</h1>
+      <h3 className="card-about">About TourTracker</h3>
         {/* Additional content goes here */}
       </div>
     </div>
