@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './about.css'; // Ensure this file contains your styles for the about section and button
-import './aboutpopup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';

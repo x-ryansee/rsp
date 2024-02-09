@@ -164,3 +164,8 @@
   width: 100% !important;
   height: 100% !important;
 }
+
+.zoom-out {
+  transform: scale(0.8); /* Example scale, adjust as needed */
+  transition: transform 0.3s ease; /* Smooth transition */
+}

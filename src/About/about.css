@@ -4,7 +4,7 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%) rotate(270deg); /* Combined transformations */
-  background-color: #313131;
+  background-color: rgb(20, 20, 20);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -14,7 +14,7 @@
 }
 
 .about-button:hover {
-  color: #FFFFFF; /* Consider a lighter color for better visibility */
+  color: #d9306b; /* Consider a lighter color for better visibility */
 }
 
 .about-popup {

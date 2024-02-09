@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './scrollbar.css';
 
-const ScrollBar = ({ sections, activeSection, onSectionChange }) => {
+const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDragEnd }) => {
   const scrollbarContainerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   
@@ -31,10 +31,12 @@ const ScrollBar = ({ sections, activeSection, onSectionChange }) => {
   const handleDragStart = (e) => {
     setIsDragging(true);
     e.preventDefault(); // Prevent text selection
+    onDragStart(); // Correctly call onDragStart from destructured props
   };
-
+  
   const handleDragEnd = () => {
     setIsDragging(false);
+    onDragEnd(); // Correctly call onDragEnd from destructured props
   };
 
   const handleMouseMove = (e) => {

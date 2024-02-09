@@ -24,6 +24,15 @@ function App() {
   const [isZoomed, setIsZoomed] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
   const [currentSection, setCurrentSection] = useState('home');
+  const [isDragging, setIsDragging] = useState(false);
+
+const handleDragStart = () => {
+  setIsDragging(true);
+};
+
+const handleDragEnd = () => {
+  setIsDragging(false);
+};
 
   const handleSectionChange = (newSection) => {
     setActiveSection(newSection);
@@ -107,34 +116,34 @@ const handleScroll = (event) => {
         {hasEntered && (
       <>
         <Element name="scrollbar">
-        <ScrollBar sections={sections} activeSection={activeSection} onSectionChange={handleSectionChange} />
+        <ScrollBar sections={sections} activeSection={activeSection} onSectionChange={handleSectionChange} onDragStart={handleDragStart} onDragEnd={handleDragEnd} />
         </Element>
         <Element name="about">
           <About />
         </Element>
       </>
     )}
-    <Element name="home" className={isZoomed ? 'zoomed-home' : ''}>
+    <Element name="home" className={`${isZoomed ? 'zoomed-home' : ''} ${isDragging ? 'zoom-out' : ''}`}>
       <HomePage onEnter={() => setHasEntered(true)} />
     </Element>
       {hasEntered && (
         <>
-          <Element name="Nerg" className="section">
+          <Element name="Nerg" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <Nerg />
           </Element>
-          <Element name="Idylls" className="section">
+          <Element name="Idylls" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <Idylls />
           </Element>
-          <Element name="CarbonHero" className="section">
+          <Element name="CarbonHero" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <CarbonHero />
           </Element>
-          <Element name="TalesAI" className="section">
+          <Element name="TalesAI" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <TalesAI />
           </Element>
-          <Element name="Teampass" className="section">
+          <Element name="Teampass" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <Teampass />
           </Element>
-          <Element name="TourTracker" className="section">
+          <Element name="TourTracker" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <TourTracker />
           </Element>
         </>
