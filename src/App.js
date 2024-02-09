@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Element, Events, scrollSpy } from 'react-scroll';
-import NavBar from './NavBar';
+import ScrollBar from './ScrollBar';
 import HomePage from './HomePage';
 import About from './About/About';
 import Nerg from './Nerg';
@@ -11,7 +11,6 @@ import Teampass from './Teampass';
 import TourTracker from './TourTracker';
 import './app.css';
 import './homepage.css';
-import './navbar.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -24,24 +23,12 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isZoomed, setIsZoomed] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
+  const [currentSection, setCurrentSection] = useState('home');
 
-
-  const createRipple = (event) => {
-    const button = event.currentTarget;
-    const circle = document.createElement('span');
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-    circle.classList.add('ripple');
-    const ripple = button.getElementsByClassName('ripple')[0];
-    if (ripple) {
-      ripple.remove();
-    }
-    button.appendChild(circle);
+  const handleSectionChange = (newSection) => {
+    setActiveSection(newSection);
   };
-  
+
 // Removed isZoomed logic from scroll event
 const handleScroll = (event) => {
   if (!hasEntered) {
@@ -117,10 +104,10 @@ const handleScroll = (event) => {
 
   return (
     <div className="App">
-    {hasEntered && (
+        {hasEntered && (
       <>
-        <Element name="navbar">
-          <NavBar activeSection={activeSection} />
+        <Element name="scrollbar">
+        <ScrollBar sections={sections} activeSection={activeSection} onSectionChange={handleSectionChange} />
         </Element>
         <Element name="about">
           <About />
@@ -132,22 +119,22 @@ const handleScroll = (event) => {
     </Element>
       {hasEntered && (
         <>
-          <Element name="Nerg" className="section" onMouseOver={createRipple}>
+          <Element name="Nerg" className="section">
             <Nerg />
           </Element>
-          <Element name="Idylls" className="section" onMouseOver={createRipple}>
+          <Element name="Idylls" className="section">
             <Idylls />
           </Element>
-          <Element name="CarbonHero" className="section" onMouseOver={createRipple}>
+          <Element name="CarbonHero" className="section">
             <CarbonHero />
           </Element>
-          <Element name="TalesAI" className="section" onMouseOver={createRipple}>
+          <Element name="TalesAI" className="section">
             <TalesAI />
           </Element>
-          <Element name="Teampass" className="section" onMouseOver={createRipple}>
+          <Element name="Teampass" className="section">
             <Teampass />
           </Element>
-          <Element name="TourTracker" className="section" onMouseOver={createRipple}>
+          <Element name="TourTracker" className="section">
             <TourTracker />
           </Element>
         </>

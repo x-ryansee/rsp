@@ -45,7 +45,7 @@
   position: absolute;
   width: 10px; /* Small initial size */
   height: 10px;
-  background: rgba(255, 255, 255, 0.8); /* Light color for the ripple */
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 100%;
   top: 50%;
   left: 50%;

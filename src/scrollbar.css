@@ -1,0 +1,26 @@
+/* scrollbar.css */
+.scrollbar-container {
+  position: fixed;
+  right: 160px;
+  top: 20%;
+  height: 60%;
+  width: 10px; /* Adjust as needed */
+  background: #f0f0f0; /* Optional */
+  cursor: pointer;
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  width: 100%;
+  height: 50px; /* Adjust as needed */
+  background-color: #333;
+  cursor: grab;
+}
+
+.scrollbar-label {
+  display: block;
+  color: #fff; /* Text color */
+  text-align: center;
+  width: 100%;
+  /* Adjust the positioning as needed */
+}
