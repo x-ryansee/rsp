@@ -14,7 +14,7 @@ const TourTracker = () => {
         <div className="card-front card-tourtracker" >
           {/* Front content */}
           <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">TourTracker</h1>
-          <h3 className="card-about">About TourTracker</h3>
+          <h3 className="card-about">Sole Developer and Founder</h3>
         </div>
         <div className="card-back">
           {/* Back content */}
