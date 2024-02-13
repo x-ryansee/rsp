@@ -18,6 +18,9 @@
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
   /* Center the card */
   display: flex;
   justify-content: center;
@@ -38,6 +41,7 @@
   margin: 0 auto; /* Center horizontally within .section */
   position: relative; /* Required for absolute positioning of pseudo-elements */
   z-index: 0;
+  perspective: 1000px;
 }
 
 .card-container::after {
@@ -131,6 +135,37 @@
   font-weight: 600; /* Bold font weight for emphasis */
 }
 
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+
 .ripple {
   position: absolute;
   border-radius: 50%;
@@ -157,6 +192,7 @@
 .card-tourtracker {
   background-image: url('../public/TourTracker.png'); /* Replace 'Nerg.png' with the actual image path */
   background-size: cover; /* Adjust background sizing as needed */
+  position: relative; /* Ensure it contains its children properly */
   /* Other styles for this card if necessary */
 }
 

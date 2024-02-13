@@ -1,16 +1,19 @@
 .about-button {
   font-family: 'Permanent Marker', cursive;
   position: fixed;
-  top: 50%;
-  left: 0;
+  top: 60%;
+  left: 80px;
   transform: translateY(-50%) rotate(270deg); /* Combined transformations */
-  background-color: rgb(20, 20, 20);
+  background-color: transparent !important;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   z-index: 1001; /* Corrected to single declaration */
   font-size: 2rem;
+  transform-origin: left center;
+  width: 250px; /* Example fixed width */
+  text-align: center; /* Ensure text is centered */
 }
 
 .about-button:hover {
