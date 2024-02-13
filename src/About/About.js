@@ -20,12 +20,10 @@ const About = () => {
 
       {isOpen && (
         <div className="about-popup">
-          <div className="card">
-            <h1 className="card-title">About</h1>
-            <div className="card-content">
-              <p><strong>Location:</strong> Los Angeles-based Developer</p>
-              <p><strong>Education:</strong> Degree from Cal Poly - SLO, refined skills from Flatiron School, Google UX certified</p>
-              <p><strong>Currently:</strong> Leading front-end mobile development at NERG</p>
+            <div className="about-card-content">
+              <p>Los Angeles-based Developer</p>
+              <p>Degree from Cal Poly - SLO, refined skills from Flatiron School, Google UX certified</p>
+              <p> Leading front-end mobile development at NERG</p>
               <div className="contact-icons">
                 <a href="https://www.linkedin.com/in/ryansee/" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faLinkedin} />
@@ -38,7 +36,6 @@ const About = () => {
                 </a>
               </div>
             </div>
-          </div>
           {/* Removed the standalone Close button inside the popup since it's now integrated with the About Me button */}
         </div>
       )}

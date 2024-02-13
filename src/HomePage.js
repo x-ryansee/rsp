@@ -52,11 +52,12 @@ const HomePage = ({ onEnter }) => {
         <pointLight position={[-10, -10, -10]} />
         <Model />
       </Canvas>
+      <div className="home-about">Full-Stack Developer</div>
       <button 
         style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', cursor: 'pointer' }}
         onClick={handleClick}
       >
-        Click Me
+        Enter
       </button>
     </div>
   );
