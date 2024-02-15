@@ -22,7 +22,9 @@ const Idylls = () => {
       </div>
       <div className="card-back">
           {/* Back content */}
-          <h3>Details on the back...</h3>
+          <h3>Engineered a full-stack application for property reservations, utilizing ReactJS and Ruby on Rails</h3>
+          <h3>CRUD functionality built with React, React Router implemented for page navigation.</h3>
+          <h3>Used Rails and BCrypt to manage user authentication, and sessions data to track users once logged in.</h3>
         </div>
       </div>
     </div>
