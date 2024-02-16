@@ -27,7 +27,7 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  font-family: 'MontserratAlternatesMedium', sans-serif; /* Apply the imported font */
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
 }
 
 .card-container {
@@ -84,7 +84,7 @@
 
 
 .card-title {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
   left: -150px; /* Adjust for desired positioning */
   font-size: 6rem;
@@ -95,7 +95,7 @@
 }
 
 .card-about {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
   left: -130px; /* Adjust for desired positioning */
   top: 330px;
@@ -117,10 +117,6 @@
   opacity: .1; /* Make the overlay fully transparent by default */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
   z-index: 1; /* Below the card title */
-}
-
-.card-container:hover:before {
-  opacity: 1; /* Fully visible on hover */
 }
 
 
@@ -159,6 +155,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
 }
 
 .card-back {

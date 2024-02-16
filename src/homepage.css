@@ -15,5 +15,5 @@
   .home-about {
     transform: translateY(-400px) translateX(180px);
     font-size: 40px;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Montserrat Alternates'; /* Apply the imported font */
   }

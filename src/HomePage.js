@@ -54,7 +54,7 @@ const HomePage = ({ onEnter }) => {
       </Canvas>
       <div className="home-about">Full-Stack Developer</div>
       <button 
-        style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', cursor: 'pointer' }}
+        style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', cursor: 'pointer', fontFamily: 'Montserrat Alternates'}}
         onClick={handleClick}
       >
         Enter

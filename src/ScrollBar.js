@@ -5,6 +5,7 @@ import './scrollbar.css';
 const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDragEnd }) => {
   const scrollbarContainerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
+  const dragOffsetRef = useRef(0);
   
   // Calculate the thumb's initial position
   const calculateThumbPosition = () => {
@@ -31,8 +32,14 @@ const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDr
   const handleDragStart = (e) => {
     setIsDragging(true);
     e.preventDefault(); // Prevent text selection
-    onDragStart(); // Correctly call onDragStart from destructured props
+    
+    // Calculate the offset from the mouse Y position to the thumb's top
+    const thumbRect = e.currentTarget.querySelector('.scrollbar-thumb').getBoundingClientRect();
+    dragOffsetRef.current = e.clientY - thumbRect.top - (thumbRect.height / 2); // Adjust to get the middle of the thumb
+    
+    onDragStart(); // Call the provided onDragStart function
   };
+  
   
   const handleDragEnd = () => {
     setIsDragging(false);
@@ -42,23 +49,23 @@ const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDr
   const handleMouseMove = (e) => {
     if (isDragging && scrollbarContainerRef.current) {
       const rect = scrollbarContainerRef.current.getBoundingClientRect();
-      const position = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+      
+      // Adjust the position calculation by subtracting the drag offset
+      // Ensure the dragOffset is considered to keep the thumb centered to cursor
+      let position = Math.max(0, Math.min(e.clientY - rect.top - dragOffsetRef.current, rect.height));
+      
       const scrollPercentage = position / rect.height;
       const newScrollY = scrollPercentage * (document.documentElement.scrollHeight - window.innerHeight);
       window.scrollTo({ top: newScrollY });
   
-      // Directly update thumb position
       setThumbPosition(position);
   
-      // Determine which section this corresponds to
       const sectionIndex = Math.floor(scrollPercentage * sections.length);
       const currentSection = sections[Math.min(sectionIndex, sections.length - 1)];
-  
-      // Optionally, update a local state or pass this back to the parent to update the active section
-      // For example, using a callback prop passed from the parent to update the active section
       onSectionChange(currentSection);
     }
   };
+  
 
   useEffect(() => {
     if (isDragging) {

@@ -22,7 +22,9 @@ const CarbonHero = () => {
       </div>
       <div className="card-back">
           {/* Back content */}
-          <h3>Details on the back...</h3>
+          <h3>App for tracking and reducing carbon footprints, with an emphasis on personalized tracking, goal-setting, and user engagement through rewards</h3>
+          <h3>Leveraged React Native for cross-platform functionality, integrated AR for immersive experiences, and implemented customization for accurate emissions calculations</h3>
+          <h3>Developed a unique rewards system to encourage sustainable behaviors, partnered with local businesses for tangible incentives, and utilized user feedback for ongoing app enhancement</h3>
         </div>
       </div>
     </div>
