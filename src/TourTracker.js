@@ -18,7 +18,9 @@ const TourTracker = () => {
         </div>
         <div className="card-back">
           {/* Back content */}
-          <h3>Details on the back...</h3>
+          <h3>React Native + Django application using Spotify API for personalized concert discovery based on user's history.</h3>
+          <h3>Implementing a Django to manage API endpoints, user authentication, and live event data retrieval, ensuring scalable and secure user interactions</h3>
+          <h3>Employing Agile methodologies and version control with Git for iterative development, feature integration, and collaboration across front-end and back-end development stages</h3>
         </div>
       </div>
     </div>

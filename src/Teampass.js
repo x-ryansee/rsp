@@ -18,7 +18,9 @@ const Teampass = () => {
       </div>
       <div className="card-back">
           {/* Back content */}
-          <h3>Details on the back...</h3>
+          <h3>Spearheaded UI enhancements for a mobile app using Swift and JavaScript, significantly boosting performance and user experience</h3>
+          <h3>Engaged in the full software development lifecycle, from conceptualizing the user experience to the deployment of robust and scalable applications</h3>
+          <h3>Implemented Git for version control and collaborative development</h3>
         </div>
       </div>
     </div>

@@ -18,7 +18,9 @@ const TalesAI = () => {
       </div>
       <div className="card-back">
           {/* Back content */}
-          <h3>Details on the back...</h3>
+          <h3>Full Stack app using React Native, Python, and an AI model built with PyTorch for interactive storytelling.</h3>
+          <h3>Created a user-friendly experience where users craft personalized stories and books through intuitive action selection. </h3>
+          <h3>Conducted thorough testing and debugging to ensure app stability, performance, and compatibility with devices</h3>
         </div>
       </div>
     </div>
