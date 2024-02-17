@@ -16,7 +16,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TalesAI", "Teampass", "TourTracker"];
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker"];
 
 function App() {
 
@@ -137,12 +137,12 @@ const handleScroll = (event) => {
           <Element name="CarbonHero" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <CarbonHero />
           </Element>
-          <Element name="TalesAI" className={`section ${isDragging ? 'zoom-out' : ''}`}>
+          {/* <Element name="TalesAI" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <TalesAI />
-          </Element>
-          <Element name="Teampass" className={`section ${isDragging ? 'zoom-out' : ''}`}>
+          </Element> */}
+          {/* <Element name="Teampass" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <Teampass />
-          </Element>
+          </Element> */}
           <Element name="TourTracker" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <TourTracker />
           </Element>

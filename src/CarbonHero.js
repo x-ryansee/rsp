@@ -11,7 +11,7 @@ const CarbonHero = () => {
   return (
     <div className="card-container" onClick={handleClick}>
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
-        <div className="card-front">
+        <div className="card-front card-carbon">
         <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">CarbonHero</h1>
         <h3 className="card-about">Sole Developer and Founder</h3>
         <video width="100%" height="auto" controls autoPlay muted loop>

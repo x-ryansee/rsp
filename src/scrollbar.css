@@ -2,7 +2,7 @@
 .scrollbar-container {
   position: fixed;
   right: 160px;
-  top: 20%;
+  top: 18%;
   height: 60%;
   width: 1px; /* Adjust as needed */
   background: #5f5f5f; /* Optional */
