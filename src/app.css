@@ -197,7 +197,7 @@
 }
 
 .card-idylls:hover video {
-  opacity: 0.1; /* Adjust opacity as desired on hover */
+  opacity: 0.2; /* Adjust opacity as desired on hover */
 }
 
 .card-carbon video {
@@ -205,12 +205,12 @@
 }
 
 .card-carbon:hover video {
-  opacity: 0.1; /* Adjust opacity as desired on hover */
+  opacity: 0.2; /* Adjust opacity as desired on hover */
 }
 
 
 .card-nerg:hover::before, .card-teampass:hover::before, .card-tourtracker:hover::before, .card-idylls:hover::before, .card-carbon:hover::before{
-  opacity: 0.05; /* Dim the background image */
+  opacity: 0.2; /* Dim the background image */
 }
 
 .canvas-container canvas {
