@@ -26,13 +26,13 @@ const About = () => {
               <p> Leading front-end mobile development at NERG</p>
               <div className="contact-icons">
                 <a href="https://www.linkedin.com/in/ryansee/" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faLinkedin} />
+                  linkedin
                 </a>
                 <a href="https://github.com/x-ryansee" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faGithub} />
+                  github
                 </a>
                 <a href="mailto:ryanjosephsee@gmail.com">
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  email
                 </a>
               </div>
             </div>

@@ -11,23 +11,43 @@
 }
 
 .card {
-  width: 100%; /* Adjust to the desired width */
-  height: 100%; /* Adjust to the desired height */
-  background-color: rgba(255, 255, 255, 0.1); /* For a slight discoloration */
+  width: 100%;
+  height: 100%;
   color: white;
-  padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-  transition: transform 0.6s;
   transform-style: preserve-3d;
   cursor: pointer;
-  /* Center the card */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
-  font-family: 'Montserrat Alternates'; /* Apply the imported font */
+  transition: transform 0.6s, opacity 0.3s ease; /* Smooth transition for transformations */
+  font-family: 'Montserrat Alternates';
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  opacity: 0; /* Initially fully transparent */
+  transition: opacity 0.3s ease; /* Smooth transition for the opacity */
+  pointer-events: none; /* Ensures it doesn't interfere with clicking */
+  z-index: 0; /* Ensure it's below the text but above the card's background */
+}
+
+.card:hover::before {
+  opacity: 0.7; /* This makes the overlay visible, dimming the background */
+}
+
+.card-title, .card-about, .card-back h3 {
+  position: relative;
+  z-index: 1; /* Ensure text is above the overlay */
 }
 
 .card-container {
@@ -58,28 +78,6 @@
   transition: transform 0.5s ease-out, opacity 0.3s ease;
   opacity: 1;
   pointer-events: none; /* Ignore mouse clicks */
-}
-
-.card-container:hover::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5); /* Light color for the ripple */
-  animation: ripple 0.6s linear;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-@keyframes ripple {
-  from {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  to {
-    transform: scale(4); /* Adjust scale as needed */
-    opacity: 0;
-  }
 }
 
 
@@ -164,7 +162,6 @@
 
 
 .ripple {
-  position: absolute;
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 0.6s linear;
@@ -174,23 +171,40 @@
 
 
 /* Add a unique class for the Nerg card */
-.card-nerg {
-  background-image: url('../public/Nerg.png'); /* Replace 'Nerg.png' with the actual image path */
-  background-size: cover; /* Adjust background sizing as needed */
-  /* Other styles for this card if necessary */
+.card-nerg, .card-teampass, .card-tourtracker {
+  position: relative; /* This is crucial for the positioning of the pseudo-element */
 }
 
-.card-teampass {
-  background-image: url('../public/Teampass.png'); /* Replace 'Nerg.png' with the actual image path */
-  background-size: cover; /* Adjust background sizing as needed */
-  /* Other styles for this card if necessary */
+.card-nerg::before, .card-teampass::before, .card-tourtracker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: opacity 0.3s ease; /* Smooth transition for the opacity */
+  pointer-events: none; /* Ensures it doesn't interfere with clicking */
+  z-index: 0; /* Below the text content */
 }
 
-.card-tourtracker {
-  background-image: url('../public/TourTracker.png'); /* Replace 'Nerg.png' with the actual image path */
-  background-size: cover; /* Adjust background sizing as needed */
-  position: relative; /* Ensure it contains its children properly */
-  /* Other styles for this card if necessary */
+.card-nerg::before {
+  background-image: url('../public/Nerg1.png'); /* Specific background image for .card-nerg */
+  background-size: cover;
+}
+
+.card-teampass::before {
+  background-image: url('../public/Teampass.png'); /* Specific background image for .card-teampass */
+  background-size: cover;
+}
+
+.card-tourtracker::before {
+  background-image: url('../public/TourTracker.png'); /* Specific background image for .card-tourtracker */
+  background-size: cover;
+}
+
+.card-nerg:hover::before, .card-teampass:hover::before, .card-tourtracker:hover::before {
+  opacity: 0.05; /* Dim the background image */
 }
 
 .canvas-container canvas {
