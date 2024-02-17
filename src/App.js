@@ -9,6 +9,7 @@ import CarbonHero from './CarbonHero';
 import TalesAI from './TalesAI';
 import Teampass from './Teampass';
 import TourTracker from './TourTracker';
+import More from './More';
 import './app.css';
 import './homepage.css';
 
@@ -16,7 +17,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker"];
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker", "ect"];
 
 function App() {
 
@@ -145,6 +146,9 @@ const handleScroll = (event) => {
           </Element> */}
           <Element name="TourTracker" className={`section ${isDragging ? 'zoom-out' : ''}`}>
             <TourTracker />
+          </Element>
+          <Element name="More">
+            <More />
           </Element>
         </>
       )}

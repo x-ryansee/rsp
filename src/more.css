@@ -1,0 +1,30 @@
+.footer {
+    background-color: #4e4e4e; /* Light grey background */
+    color: #c6c6c6; /* Dark text color */
+    text-align: center;
+    padding: 20px 0; /* Top and bottom padding */
+    width: 100%;
+    min-height: 25vh; /* Ensures footer is at least 25% of the viewport height */
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Vertically centers the content in the footer */
+    align-items: center; /* Horizontally centers the content */
+}
+
+.footer p {
+    font-size: 1.6rem; /* Larger font size */
+    margin: 10px 0; /* Adds margin to the top and bottom */
+    font-family: 'Montserrat Alternates';
+}
+
+.footer a {
+    color: #0077b5; /* LinkedIn blue color, adjust as needed */
+    margin: 0 5px;
+    text-decoration: none; /* Removes underline from links */
+    font-size: 2rem; /* Ensures link text is also larger */
+    font-family: 'Montserrat Alternates';
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}

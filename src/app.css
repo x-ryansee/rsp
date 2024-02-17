@@ -222,3 +222,17 @@
   transform: scale(0.8); /* Example scale, adjust as needed */
   transition: transform 0.3s ease; /* Smooth transition */
 }
+
+.h4-container {
+  display: flex;
+  flex-direction: column; /* Ensures H4 elements stack vertically */
+  align-items: center; /* Center aligns the H4 elements */
+}
+
+.h4-container h4 {
+  animation: none;
+}
+
+.card-front:hover .h4-container h4 {
+  animation: fadeInUp 0.5s forwards;
+}
