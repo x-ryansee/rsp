@@ -20,11 +20,14 @@ const CarbonHero = () => {
         </video>
         {/* Additional content goes here */}
       </div>
-      <div className="card-back">
+      <div className="h4-container">
+        <h4>App for tracking and reducing carbon footprints, with an emphasis on personalized tracking, goal-setting, and user engagement through rewards</h4>
+        <h4>Leveraged React Native for cross-platform functionality, integrated AR for immersive experiences, and implemented customization for accurate emissions calculations</h4>
+        <h4>Developed a unique rewards system to encourage sustainable behaviors, partnered with local businesses for tangible incentives, and utilized user feedback for ongoing app enhancement</h4>
+      </div>
+         <div className="card-back">
           {/* Back content */}
-          <h3>App for tracking and reducing carbon footprints, with an emphasis on personalized tracking, goal-setting, and user engagement through rewards</h3>
-          <h3>Leveraged React Native for cross-platform functionality, integrated AR for immersive experiences, and implemented customization for accurate emissions calculations</h3>
-          <h3>Developed a unique rewards system to encourage sustainable behaviors, partnered with local businesses for tangible incentives, and utilized user feedback for ongoing app enhancement</h3>
+          <h3>Something for the back</h3>
         </div>
       </div>
     </div>

@@ -59,7 +59,6 @@
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
   margin: 0 auto; /* Center horizontally within .section */
-  position: relative; /* Required for absolute positioning of pseudo-elements */
   z-index: 0;
   perspective: 1000px;
 }
