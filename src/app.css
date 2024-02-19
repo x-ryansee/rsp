@@ -84,6 +84,7 @@
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
   left: -150px; /* Adjust for desired positioning */
+  top: 0px;
   font-size: 6rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
@@ -94,8 +95,8 @@
 .card-about {
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
-  left: -130px; /* Adjust for desired positioning */
-  top: 330px;
+  left: -150px; /* Adjust for desired positioning */
+  top: 150px;
   font-size: 2rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
