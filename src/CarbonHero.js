@@ -13,7 +13,7 @@ const CarbonHero = () => {
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
         <div className="card-front card-carbon">
           <h5 className="card-stack">ReactJS / Mapping / Python</h5>
-          <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">CarbonHero</h1>
+          <h1 className="card-title">CarbonHero</h1>
           <h3 className="card-about">Sole Developer and Founder</h3>
           <button className="card-button"> Private / Contact for Details </button>
           <h5 className="card-extra">Looking for Collaborators</h5>

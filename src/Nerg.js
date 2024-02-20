@@ -13,7 +13,7 @@ const Nerg = () => {
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
         <div className="card-front card-nerg">
           <h5 className="card-stack">React Native / Figma / Expo</h5>
-          <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Nerg</h1>
+          <h1 className="card-title">Nerg</h1>
           <h3 className="card-about">Lead Front-End Engineer</h3>
           <button className="card-button"> Website</button>
           <h5 className="card-extra">App in Development</h5>

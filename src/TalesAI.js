@@ -12,7 +12,7 @@ const TalesAI = () => {
     <div className="card-container" onClick={handleClick}>
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
         <div className="card-front card-talesai" >
-      <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">TalesAI</h1>
+      <h1 className="card-title">TalesAI</h1>
       <h3 className="card-about">Sole Developer and Founder</h3>
         {/* Additional content goes here */}
       </div>

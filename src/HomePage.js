@@ -64,10 +64,12 @@ const HomePage = ({ onEnter }) => {
       >
         Enter
       </button>
-      {isShrunk && <h5 className="card-stack" style={counterScale}>React / Blender / ThreeJS</h5>}
-      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '50px'}}>Portfolio</h3>}
-      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '280px'}}>Sole Developer</h3>}
-      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '380px'}}>Code</button>}
+      <div style={{...counterScale}}>
+      {isShrunk && <h5 className="card-stack" style={{counterScale, top: '-300px', left: '-600px'}}>React / Blender / ThreeJS</h5>}
+      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '-350px', left: '-600px'}}>Portfolio</h3>}
+      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-150px', left: '-600px'}}>Sole Developer</h3>}
+      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-70px', left: '-600px'}}>Code</button>}
+      </div>
     </div>
   );
 };

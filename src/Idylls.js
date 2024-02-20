@@ -13,7 +13,7 @@ const Idylls = () => {
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
         <div className="card-front card-idylls">
           <h5 className="card-stack">React / Ruby on Rails</h5>
-          <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Idylls</h1>
+          <h1 className="card-title">Idylls</h1>
           <h3 className="card-about">Sole Developer and Founder</h3>
           <button className="card-button"> Website</button>
           <button className="card-button"> Demo</button>
