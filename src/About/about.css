@@ -1,42 +1,27 @@
-.about-button {
+.about-section {
   font-family: 'Permanent Marker', cursive;
   position: fixed;
-  top: 60%;
+  top: 90%;
   left: 80px;
-  transform: translateY(-50%) rotate(270deg); /* Combined transformations */
+  transform: translateY(-50%) rotate(270deg);
   background-color: transparent !important;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  z-index: 1001; /* Corrected to single declaration */
+  z-index: 1001;
   font-size: 2rem;
   transform-origin: left center;
-  width: 250px; /* Example fixed width */
-  text-align: center; /* Ensure text is centered */
+  width: 250px;
+  text-align: center;
+}
+.about-section a {
+  display: inline; /* This will allow margins to be applied */
+  margin: 0 20px; /* Adjusts spacing between links */
+  color: rgb(166, 166, 166); /* Initial color */
+  text-decoration: none; /* Removes underline from links */
 }
 
-.about-button:hover {
-  color: #d9306b; /* Consider a lighter color for better visibility */
-}
-
-.about-popup {
-  z-index: 1000;
-  /* Ensure you define dimensions, background, and positioning for the popup */
-  position: fixed; /* or absolute, depending on desired behavior */
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Example semi-transparent background */
-  display: flex;
-  /* Other styles for content alignment and appearance */
-}
-
-.about-card-content {
-  width: 40%; /* Set width to 40% of its parent container */
-  margin-left: 300px; /* Push it 100px from the left */
-  margin-top: 300px;
-  color: #f5f5f5; /* Light text color for contrast */
-  font-size: 2.5rem; /* Adjust font size as needed */
-  font-weight: 300; /* Light font weight for a modern look */
-  font-family: 'Montserrat Alternates';
+.about-section a:hover {
+  color: #d9306b; /* Pink color on hover */
 }

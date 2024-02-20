@@ -90,7 +90,7 @@
   font-size: .8rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
-  z-index: 9999; /* Increased to ensure it's above all other elements */
+  z-index: 999; /* Increased to ensure it's above all other elements */
   opacity: 1; /* Full visibility */
 }
 
@@ -102,7 +102,7 @@
   font-size: 6rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
-  z-index: 9999; /* Increased to ensure it's above all other elements */
+  z-index: 999; /* Increased to ensure it's above all other elements */
 }
 
 .card-about {
@@ -111,28 +111,35 @@
   left: -50px; /* Adjust for desired positioning */
   top: 200px;
   font-size: 1.5rem;
-  color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
-  z-index: 9999; /* Increased to ensure it's above all other elements */
+  z-index: 999; /* Increased to ensure it's above all other elements */
   opacity: 1; /* Full visibility */
 }
 
 .card-buttons-container {
   display: flex; /* Use flexbox to layout children */
   justify-content: center; /* Center the buttons horizontally */
-  gap: 10px; /* Add some space between the buttons */
+  gap: 0px; /* Add some space between the buttons */
 }
 
 .card-button {
+  background-color: transparent; /* Removes any background color */
+  border: 1px solid #FFFFFF; /* Creates a white border around the button */
+  color: #FFFFFF; /* Sets the text color to white */
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
   left: -50px; /* Adjust for desired positioning */
   top: 260px;
-  font-size: .8rem;
-  color: #000000; /* Ensuring visibility against the background */
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
-  z-index: 9999; /* Increased to ensure it's above all other elements */
-  opacity: 1; /* Full visibility */
+  padding: 8px 15px; /* Increases the size of the button */
+  font-size: .9rem; /* Slightly increases the text size */
+  margin: 5px; /* Adds space around the button to separate it from others */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effects */
+  z-index: 999;
+}
+
+.card-button:hover {
+  color: #d9306b; /* Changes text color on hover */
+  border-color: #d9306b; /* Changes border color on hover */
 }
 
 .card-button:first-child {
@@ -140,7 +147,7 @@
 }
 
 .card-button:last-child {
-  left: 30px; /* Adjust this value based on the size of your buttons */
+  left: 50px; /* Adjust this value based on the size of your buttons */
 }
 
 
@@ -152,7 +159,7 @@
   font-size: .8rem;
   color: #ffffff; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
-  z-index: 9999; /* Increased to ensure it's above all other elements */
+  z-index: 999; /* Increased to ensure it's above all other elements */
   opacity: 1; /* Full visibility */
 }
 

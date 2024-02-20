@@ -13,7 +13,13 @@
   }
 
   .home-about {
-    transform: translateY(-400px) translateX(180px);
+    transform: translateY(-350px) translateX(180px);
     font-size: 40px;
+    font-family: 'Montserrat Alternates'; /* Apply the imported font */
+  }
+
+  .home-about2 {
+    transform: translateY(-340px) translateX(180px);
+    font-size: 20px;
     font-family: 'Montserrat Alternates'; /* Apply the imported font */
   }

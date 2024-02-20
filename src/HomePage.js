@@ -58,17 +58,18 @@ const HomePage = ({ onEnter }) => {
         <Model />
       </Canvas>
       <div className="home-about">Full-Stack Developer</div>
+      <div className="home-about2">Based in Los Angeles</div>
       <button className="home-about"
-        style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', cursor: 'pointer', fontFamily: 'Montserrat Alternates'}}
+        style={{ marginTop: '30px', padding: '10px 20px', fontSize: '16px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', cursor: 'pointer', fontFamily: 'Montserrat Alternates'}}
         onClick={handleClick}
       >
         Enter
       </button>
       <div style={{...counterScale}}>
-      {isShrunk && <h5 className="card-stack" style={{counterScale, top: '-300px', left: '-600px'}}>React / Blender / ThreeJS</h5>}
-      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '-350px', left: '-600px'}}>Portfolio</h3>}
-      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-150px', left: '-600px'}}>Sole Developer</h3>}
-      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-70px', left: '-600px'}}>Code</button>}
+      {isShrunk && <h5 className="card-stack" style={{counterScale, top: '-300px', left: '-580px'}}>React / Blender / ThreeJS</h5>}
+      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '-350px', left: '-580px'}}>Portfolio</h3>}
+      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-150px', left: '-580px'}}>Sole Developer</h3>}
+      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-70px', left: '-580px'}}>Code</button>}
       </div>
     </div>
   );
