@@ -42,7 +42,7 @@
 .card:hover::before {
   opacity: 0.7; /* This makes the overlay visible, dimming the background */
 }
-.card:hover::after {
+.card-idylls:hover::after, .card-carbon:hover::after {
   content: '';
   position: absolute;
   top: 0;

@@ -150,7 +150,7 @@ function App() {
 
   return (
     <div className="App">
-      <Element name="home">
+      <Element name="home" >
         <HomePage onEnter={handleEnter} />
       </Element>
       {hasEntered && (
