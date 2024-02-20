@@ -15,6 +15,7 @@ const CarbonHero = () => {
           <h5 className="card-stack">ReactJS / Mapping / Python</h5>
           <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">CarbonHero</h1>
           <h3 className="card-about">Sole Developer and Founder</h3>
+          <button className="card-button"> Link</button>
         <video width="100%" height="auto" controls autoPlay muted loop>
           <source src="/CarbonHeroFitness.mp4" type="video/mp4" />
           Your browser does not support the video tag.

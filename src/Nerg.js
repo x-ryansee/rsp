@@ -15,6 +15,8 @@ const Nerg = () => {
           <h5 className="card-stack">React Native / Figma / Expo</h5>
           <h1 className="card-title" data-aos="fade-up" data-aos-anchor-placement="top-center">Nerg</h1>
           <h3 className="card-about">Lead Front-End Engineer</h3>
+          <button className="card-button"> Website</button>
+          <h5>App in Development</h5>
         </div>
         <div className="card-back h4-container">
           <h4>Lead Front-End Engineer for Mobile Application</h4>

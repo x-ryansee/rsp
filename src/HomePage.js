@@ -59,6 +59,10 @@ const HomePage = ({ onEnter }) => {
       >
         Enter
       </button>
+      {isShrunk && <h5 className="card-stack">React / Blender / ThreeJS</h5>}
+      {isShrunk && <h3 className="card-title">Portfolio</h3>}
+      {isShrunk && <h3 className="card-about">Sole Developer</h3>}
+      {isShrunk && <button className="card-button"> Website</button>}
     </div>
   );
 };
