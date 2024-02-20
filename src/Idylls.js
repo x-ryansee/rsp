@@ -15,8 +15,10 @@ const Idylls = () => {
           <h5 className="card-stack">React / Ruby on Rails</h5>
           <h1 className="card-title">Idylls</h1>
           <h3 className="card-about">Sole Developer and Founder</h3>
-          <button className="card-button"> Website</button>
-          <button className="card-button"> Demo</button>
+          <div className="card-buttons-container">
+            <button className="card-button">Website</button>
+            <button className="card-button">Demo</button>
+          </div>
         <video width="100%" height="auto" controls autoPlay muted loop>
           <source src="/Idylls.mp4" type="video/mp4" />
           Your browser does not support the video tag.
