@@ -79,12 +79,23 @@
   pointer-events: none; /* Ignore mouse clicks */
 }
 
+.card-stack {
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
+  position: absolute;
+  left: -100px; /* Adjust for desired positioning */
+  top: 60px;
+  font-size: .8rem;
+  color: #FFFFFF; /* Ensuring visibility against the background */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
+  z-index: 9999; /* Increased to ensure it's above all other elements */
+  opacity: 1; /* Full visibility */
+}
 
 .card-title {
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
-  left: -150px; /* Adjust for desired positioning */
-  top: 0px;
+  left: -100px; /* Adjust for desired positioning */
+  top: 30px;
   font-size: 6rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
@@ -95,9 +106,9 @@
 .card-about {
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
-  left: -150px; /* Adjust for desired positioning */
-  top: 150px;
-  font-size: 2rem;
+  left: -100px; /* Adjust for desired positioning */
+  top: 200px;
+  font-size: 1.5rem;
   color: #FFFFFF; /* Ensuring visibility against the background */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
   z-index: 9999; /* Increased to ensure it's above all other elements */
