@@ -44,8 +44,13 @@ const HomePage = ({ onEnter }) => {
     background: 'black',
   };
 
+  const counterScale = isShrunk ? {
+    transform: 'scale(' + (1 / 0.56) + ')',
+    position: 'absolute',
+  } : {};
+
   return (
-    <div ref={containerRef} className="canvas-container" style={containerStyle}>
+    <div ref={containerRef} className="canvas-container card" style={containerStyle}>
       <Canvas className="model-canvas" camera={{ position: [-5, 2, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -59,10 +64,10 @@ const HomePage = ({ onEnter }) => {
       >
         Enter
       </button>
-      {isShrunk && <h5 className="card-stack">React / Blender / ThreeJS</h5>}
-      {isShrunk && <h3 className="card-title">Portfolio</h3>}
-      {isShrunk && <h3 className="card-about">Sole Developer</h3>}
-      {isShrunk && <button className="card-button"> Website</button>}
+      {isShrunk && <h5 className="card-stack" style={counterScale}>React / Blender / ThreeJS</h5>}
+      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '50px'}}>Portfolio</h3>}
+      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '280px'}}>Sole Developer</h3>}
+      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '380px'}}>Code</button>}
     </div>
   );
 };

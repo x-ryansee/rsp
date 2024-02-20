@@ -1,10 +1,12 @@
+Welcome to my portfolio!
+
 Stuff to work on:
 
-1. scroll-behavior quicker
-2. Card details on front, link on back when clicked?
-3. Card Title opacity and  opposotie of card oppacity
+1. scroll-behavior snap one at a time
+2. add videos
+3. Card Title opacity for homepage
 4. About page
-5. Grabbing Scroll bar in the center, not moving cursor to the top
-6. footer at the end of tourtracker or bottom of app.js
+5. Scrollbar zoomout
+6. footer maybe a button?
 7. Tutorial on hover and scroll? Maybe have it dissapear once done once?
-8. Add ripple back
+8. Add ripple

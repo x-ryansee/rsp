@@ -114,6 +114,29 @@
   z-index: 9999; /* Increased to ensure it's above all other elements */
   opacity: 1; /* Full visibility */
 }
+.card-button {
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
+  position: absolute;
+  left: -100px; /* Adjust for desired positioning */
+  top: 260px;
+  font-size: .8rem;
+  color: #000000; /* Ensuring visibility against the background */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
+  z-index: 9999; /* Increased to ensure it's above all other elements */
+  opacity: 1; /* Full visibility */
+}
+
+.card-extra {
+  font-family: 'Montserrat Alternates'; /* Apply the imported font */
+  position: absolute;
+  left: -100px; /* Adjust for desired positioning */
+  top: 290px;
+  font-size: .8rem;
+  color: #ffffff; /* Ensuring visibility against the background */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* Enhanced 3D shadow effect */
+  z-index: 9999; /* Increased to ensure it's above all other elements */
+  opacity: 1; /* Full visibility */
+}
 
 .card-container:before {
   content: "";
@@ -126,6 +149,21 @@
   opacity: .1; /* Make the overlay fully transparent by default */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
   z-index: 1; /* Below the card title */
+}
+
+.card-title, .card-about, .card-stack, .card-button {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 2.5s;
+}
+
+.card:hover .card-title, 
+.card:hover .card-about, 
+.card:hover .card-stack,
+.card:hover .card-button
+ {
+  opacity: 1;
+  visibility: visible;
 }
 
 
