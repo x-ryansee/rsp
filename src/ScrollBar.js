@@ -44,11 +44,26 @@ const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDr
 };
   
 const handleDragEnd = () => {
-    setIsDragging(false);
-    // Ensure onDragEnd is a function before calling it
-    if (typeof onDragEnd === 'function') {
-      onDragEnd();
+  setIsDragging(false);
+  
+  // Assuming you store the final thumb position in a state or have a way to calculate it here
+  if (scrollbarContainerRef.current) {
+    const rect = scrollbarContainerRef.current.getBoundingClientRect();
+    let finalPosition = Math.max(0, Math.min(dragOffsetRef.current, rect.height));
+    const scrollPercentage = finalPosition / rect.height;
+    const sectionIndex = Math.floor(scrollPercentage * sections.length);
+    const currentSection = sections[Math.min(sectionIndex, sections.length - 1)];
+
+    // Call onSectionChange with the calculated section
+    if (typeof onSectionChange === 'function') {
+      onSectionChange(currentSection);
     }
+  }
+
+  // Ensure onDragEnd is a function before calling it
+  if (typeof onDragEnd === 'function') {
+    onDragEnd();
+  }
 };
 
 const handleMouseMove = (e) => {

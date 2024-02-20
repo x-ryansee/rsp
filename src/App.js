@@ -36,29 +36,43 @@ function debounce(func, wait, immediate) {
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [hasEntered, setHasEntered] = useState(false);
-  const [lastScrollDirection, setLastScrollDirection] = useState(null);
+
+    // Define the function to handle section change
+    const handleSectionChange = (newSection) => {
+      setActiveSection(newSection);
+    };
+  
+    // Define the function to be called when dragging starts
+    const handleDragStartFunction = () => {
+      // Implement any action needed when dragging starts
+    };
+  
+    // Define the function to be called when dragging ends
+    const handleDragEndFunction = () => {
+      // Implement any action needed when dragging ends
+    };
+  
   
 
-  // Adjusted smoothScrollTo function to take section name instead of y-coordinate
-  const smoothScrollToSection = (sectionName) => {
-    const sectionElement = document.querySelector(`[name="${sectionName}"]`);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
+  const smoothScrollTo = (y) => {
+    let startY = window.scrollY;
+    let targetY = y;
+    let distance = targetY - startY;
+    let startTime = null;
+
+    function scrollStep(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+      let fraction = Math.min(progress / 300, 1); // Duration of 300ms
+
+      window.scrollTo(0, startY + distance * fraction);
+
+      if (fraction < 1) {
+        window.requestAnimationFrame(scrollStep);
+      }
     }
-  };
 
-  const handleSectionChange = (newSection) => {
-    setActiveSection(newSection);
-    smoothScrollToSection(newSection); // Make sure to use the correct function here
-  };
-
-  // You can define these functions if needed or remove references if they're not used
-  const handleDragStartFunction = () => {
-    // Implement the function or remove if not needed
-  };
-
-  const handleDragEndFunction = () => {
-    // Implement the function or remove if not needed
+    window.requestAnimationFrame(scrollStep);
   };
 
   const handleScroll = (event) => {
@@ -67,39 +81,55 @@ function App() {
       return;
     }
 
-    const direction = event.deltaY > 0 ? 'down' : 'up';
-    if (direction !== lastScrollDirection) {
-      setLastScrollDirection(direction);
-      
-      let currentIndex = sections.indexOf(activeSection);
-      if (direction === 'down' && currentIndex < sections.length - 1) {
-        currentIndex++;
-      } else if (direction === 'up' && currentIndex > 0) {
-        currentIndex--;
-      }
-      const nextSection = sections[currentIndex];
-      if (nextSection) {
-        setActiveSection(nextSection);
-        smoothScrollToSection(nextSection); // Use the correct scrolling function
-      }
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const deltaY = event.deltaY;
+
+    // Determine the direction of the scroll
+    const direction = deltaY > 0 ? "down" : "up";
+
+    // Calculate the current section index based on scrollY and windowHeight
+    let currentIndex = Math.round(scrollY / windowHeight);
+
+    // Adjust the index based on the direction
+    if (direction === "down" && currentIndex < sections.length - 1) {
+      currentIndex += 1;
+    } else if (direction === "up" && currentIndex > 0) {
+      currentIndex -= 1;
     }
+    
+    // Calculate the newY position to scroll to
+    const newY = currentIndex * windowHeight;
+
+    // Use smoothScrollTo for a smooth transition to the new section
+    smoothScrollTo(newY);
+
+    // Update the active section state
+    setActiveSection(sections[currentIndex]);
   };
 
-  // Wrap handleScroll with debounce
   const debouncedHandleScroll = debounce(handleScroll, 100, false);
-
+  
   useEffect(() => {
     if (hasEntered) {
       window.addEventListener('wheel', debouncedHandleScroll, { passive: false });
-      return () => window.removeEventListener('wheel', debouncedHandleScroll);
+  
+      return () => {
+        window.removeEventListener('wheel', debouncedHandleScroll);
+      };
     }
-  }, [hasEntered, debouncedHandleScroll]);
+  }, [hasEntered, debouncedHandleScroll]); // Add hasEntered as a dependency
 
   useEffect(() => {
+    // Initialize scrollSpy
     scrollSpy.update();
+
+    // Setup scroll event for scrollSpy
     Events.scrollEvent.register('begin', function(to, element) {
       setActiveSection(to);
     });
+
+    // Clean up scroll event
     return () => {
       Events.scrollEvent.remove('begin');
     };
@@ -113,7 +143,7 @@ function App() {
       const nergSectionElement = document.querySelector('[name="Nerg"]');
       if (nergSectionElement) {
         const nergSectionY = nergSectionElement.offsetTop;
-        smoothScrollToSection(nergSectionY);
+        smoothScrollTo(nergSectionY);
       }
     }, 600); // This delay should be adjusted based on when you expect the elements to be fully rendered
   };
