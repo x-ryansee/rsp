@@ -37,6 +37,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [hasEntered, setHasEntered] = useState(false);
   const [lastScrollDirection, setLastScrollDirection] = useState(null);
+  
 
   // Adjusted smoothScrollTo function to take section name instead of y-coordinate
   const smoothScrollToSection = (sectionName) => {

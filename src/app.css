@@ -296,8 +296,16 @@
 }
 
 .zoom-out {
-  transform: scale(0.8); /* Example scale, adjust as needed */
-  transition: transform 0.3s ease; /* Smooth transition */
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  /* Attempt to counteract the gap caused by scaling */
+  transform-origin: top center; /* Adjust the origin of transformation */
+}
+
+/* Apply to sections directly to control spacing more finely */
+.section.zoom-out {
+  margin-top: -10%; /* Adjust based on the actual gap observed */
+  transition: margin-top 0.3s ease;
 }
 
 .h4-container {
