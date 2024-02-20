@@ -37,34 +37,38 @@ const ScrollBar = ({ sections, activeSection, onSectionChange, onDragStart, onDr
     const thumbRect = e.currentTarget.querySelector('.scrollbar-thumb').getBoundingClientRect();
     dragOffsetRef.current = e.clientY - thumbRect.top - (thumbRect.height / 2); // Adjust to get the middle of the thumb
     
-    onDragStart(); // Call the provided onDragStart function
-  };
+    // Ensure onDragStart is a function before calling it
+    if (typeof onDragStart === 'function') {
+      onDragStart();
+    }
+};
   
-  
-  const handleDragEnd = () => {
+const handleDragEnd = () => {
     setIsDragging(false);
-    onDragEnd(); // Correctly call onDragEnd from destructured props
-  };
+    // Ensure onDragEnd is a function before calling it
+    if (typeof onDragEnd === 'function') {
+      onDragEnd();
+    }
+};
 
-  const handleMouseMove = (e) => {
-    if (isDragging && scrollbarContainerRef.current) {
-      const rect = scrollbarContainerRef.current.getBoundingClientRect();
-      
-      // Adjust the position calculation by subtracting the drag offset
-      // Ensure the dragOffset is considered to keep the thumb centered to cursor
-      let position = Math.max(0, Math.min(e.clientY - rect.top - dragOffsetRef.current, rect.height));
-      
-      const scrollPercentage = position / rect.height;
-      const newScrollY = scrollPercentage * (document.documentElement.scrollHeight - window.innerHeight);
-      window.scrollTo({ top: newScrollY });
-  
-      setThumbPosition(position);
-  
-      const sectionIndex = Math.floor(scrollPercentage * sections.length);
-      const currentSection = sections[Math.min(sectionIndex, sections.length - 1)];
+const handleMouseMove = (e) => {
+  if (isDragging && scrollbarContainerRef.current) {
+    const rect = scrollbarContainerRef.current.getBoundingClientRect();
+    let position = Math.max(0, Math.min(e.clientY - rect.top - dragOffsetRef.current, rect.height));
+    const scrollPercentage = position / rect.height;
+    const newScrollY = scrollPercentage * (document.documentElement.scrollHeight - window.innerHeight);
+    window.scrollTo({ top: newScrollY });
+    setThumbPosition(position);
+
+    const sectionIndex = Math.floor(scrollPercentage * sections.length);
+    const currentSection = sections[Math.min(sectionIndex, sections.length - 1)];
+
+    // Ensure onSectionChange is a function before calling it
+    if (typeof onSectionChange === 'function') {
       onSectionChange(currentSection);
     }
-  };
+  }
+};
   
 
   useEffect(() => {

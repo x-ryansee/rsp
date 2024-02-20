@@ -37,6 +37,23 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [hasEntered, setHasEntered] = useState(false);
 
+    // Define the function to handle section change
+    const handleSectionChange = (newSection) => {
+      setActiveSection(newSection);
+    };
+  
+    // Define the function to be called when dragging starts
+    const handleDragStartFunction = () => {
+      // Implement any action needed when dragging starts
+    };
+  
+    // Define the function to be called when dragging ends
+    const handleDragEndFunction = () => {
+      // Implement any action needed when dragging ends
+    };
+  
+  
+
   const smoothScrollTo = (y) => {
     let startY = window.scrollY;
     let targetY = y;
@@ -92,14 +109,16 @@ function App() {
   };
 
   const debouncedHandleScroll = debounce(handleScroll, 100, false);
-
+  
   useEffect(() => {
-    window.addEventListener('wheel', debouncedHandleScroll, { passive: false });
-
-    return () => {
-      window.removeEventListener('wheel', debouncedHandleScroll);
-    };
-  }, [debouncedHandleScroll]);
+    if (hasEntered) {
+      window.addEventListener('wheel', debouncedHandleScroll, { passive: false });
+  
+      return () => {
+        window.removeEventListener('wheel', debouncedHandleScroll);
+      };
+    }
+  }, [hasEntered, debouncedHandleScroll]); // Add hasEntered as a dependency
 
   useEffect(() => {
     // Initialize scrollSpy
@@ -137,7 +156,13 @@ function App() {
       {hasEntered && (
         <>
           <Element name="scrollbar">
-            <ScrollBar sections={sections} activeSection={activeSection} />
+          <ScrollBar
+            sections={sections}
+            activeSection={activeSection}
+            onSectionChange={handleSectionChange}
+            onDragStart={handleDragStartFunction} // Ensure this is defined
+            onDragEnd={handleDragEndFunction} // Ensure this is defined
+          />
           </Element>
           <Element name="about">
             <About />
