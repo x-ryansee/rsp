@@ -18,7 +18,7 @@ import 'aos/dist/aos.css';
 
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker", "ect"];
+const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker"];
 
 function debounce(func, wait, immediate) {
   let timeout;
@@ -178,9 +178,6 @@ function App() {
           </Element>
           <Element name="TourTracker" className="section">
             <TourTracker />
-          </Element>
-          <Element name="More">
-            <More />
           </Element>
         </>
       )}

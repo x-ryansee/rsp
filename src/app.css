@@ -42,6 +42,16 @@
 .card:hover::before {
   opacity: 0.7; /* This makes the overlay visible, dimming the background */
 }
+.card:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  z-index: 2; /* Adjust z-index to cover the video but below the text */
+}
 
 .card-container {
   width: 56%; /* Cover the entire width of the parent (.section) */
@@ -265,8 +275,10 @@
 }
 
 .card-tourtracker::before {
-  background-image: url('../public/TourTracker.png'); /* Specific background image for .card-tourtracker */
-  background-size: cover;
+  background-image: url('../public/TourTracker.png');
+  background-size: auto 100%; /* Adjust the image size to fit the height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 .card-idylls video {
@@ -285,6 +297,31 @@
   opacity: 0.2; /* Adjust opacity as desired on hover */
 }
 
+.card-front.card-carbon {
+  position: relative; /* Ensure positioning context for the pseudo-element */
+}
+
+.card-front.card-carbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px; /* Height of the trim to cover */
+  background-color: #000; /* Match the background color of the card or video */
+  z-index: 10; /* Ensure it's above the video */
+}
+.card:hover .card-front.card-carbon::before {
+  /* Maintain the cover effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px; /* Keep consistent with non-hover state */
+  background-color: #000; /* Ensure it matches the card or video background */
+  z-index: 10; /* Keep on top */
+}
 
 .card-nerg:hover::before, .card-teampass:hover::before, .card-tourtracker:hover::before, .card-idylls:hover::before, .card-carbon:hover::before{
   opacity: 0.2; /* Dim the background image */

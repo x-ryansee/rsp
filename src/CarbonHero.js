@@ -17,13 +17,19 @@ const CarbonHero = () => {
           <h3 className="card-about">Sole Developer and Founder</h3>
           <button className="card-button"> Private / Contact for Details </button>
           <h5 className="card-extra">Looking for Collaborators</h5>
-        <video width="100%" height="auto" controls autoPlay muted loop>
-          <source src="/CarbonHeroFitness.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Additional content goes here */}
-      </div>
-         <div className="card-back h4-container">
+          {/* Replace video with Vimeo embed */}
+          <div >
+          <iframe 
+            src="https://player.vimeo.com/video/914923043?background=1" 
+            style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}} 
+            frameBorder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowFullScreen>
+          </iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div className="card-back h4-container">
           {/* Back content */}
           <h4>App for tracking and reducing carbon footprints, with an emphasis on personalized tracking, goal-setting, and user engagement through rewards</h4>
           <h4>Leveraged React Native for cross-platform functionality, integrated AR for immersive experiences, and implemented customization for accurate emissions calculations</h4>
