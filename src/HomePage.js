@@ -68,8 +68,8 @@ const HomePage = ({ onEnter }) => {
       <div style={{...counterScale}}>
       {isShrunk && <h5 className="card-stack" style={{counterScale, top: '-300px', left: '-580px'}}>React / Blender / ThreeJS</h5>}
       {isShrunk && <h3 className="card-title" style={{...counterScale, top: '-350px', left: '-580px'}}>Portfolio</h3>}
-      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-150px', left: '-580px'}}>Sole Developer</h3>}
-      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-70px', left: '-580px'}}>Code</button>}
+      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-160px', left: '-580px'}}>Sole Developer</h3>}
+      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-100px', left: '-580px'}}>Code</button>}
       </div>
     </div>
   );

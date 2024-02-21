@@ -15,7 +15,7 @@ const Nerg = () => {
           <h5 className="card-stack">React Native / Figma / Expo</h5>
           <h1 className="card-title">Nerg</h1>
           <h3 className="card-about">Lead Front-End Engineer</h3>
-          <button className="card-button"> Website</button>
+          <button className="card-button" onClick={() => window.open('https://www.nerg.one/', '_blank', 'noopener,noreferrer')}> Website</button>
           <h5 className="card-extra">App in Development</h5>
         </div>
         <div className="card-back h4-container">

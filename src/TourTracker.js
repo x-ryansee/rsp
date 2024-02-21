@@ -16,14 +16,14 @@ const TourTracker = () => {
           <h5 className="card-stack">React Native / Python / Spotify</h5>
           <h1 className="card-title">TourTracker</h1>
           <h3 className="card-about">Sole Developer and Founder</h3>
-          <button className="card-button" onClick={() => window.open('https://github.com', '_blank', 'noopener,noreferrer')}>
-            Code
+          <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/TourTracker', '_blank', 'noopener,noreferrer')}>
+            code
           </button>
         </div>
         <div className="card-back h4-container">
           {/* Back content */}
           <h4>React Native + Django application using Spotify API for personalized concert discovery based on user's history.</h4>
-          <h4>Implementing a Django to manage API endpoints, user authentication, and live event data retrieval, ensuring scalable and secure user interactions</h4>
+          <h4>Implementing Django to manage API endpoints, user authentication, and live event data retrieval, ensuring scalable and secure user interactions</h4>
           <h4>Employing Agile methodologies and version control with Git for iterative development, feature integration, and collaboration across front-end and back-end development stages</h4>
         </div>
       </div>
