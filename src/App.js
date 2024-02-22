@@ -161,7 +161,7 @@ function App() {
             activeSection={activeSection}
             onSectionChange={handleSectionChange}
             onDragStart={handleDragStartFunction} // Ensure this is defined
-            onDragEnd={handleDragEndFunction} // Ensure this is defined
+            onDragEnd={handleDragEndFunction}
           />
           </Element>
           <Element name="about">
