@@ -6,10 +6,7 @@ import About from './About/About';
 import Nerg from './Nerg';
 import Idylls from './Idylls';
 import CarbonHero from './CarbonHero';
-import TalesAI from './TalesAI';
-import Teampass from './Teampass';
 import TourTracker from './TourTracker';
-import More from './More';
 import './app.css';
 import './homepage.css';
 
