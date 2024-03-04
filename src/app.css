@@ -185,7 +185,6 @@
 }
 .card-title, .card-about, .card-stack, .card-button, .card-extra {
   opacity: 0;
-  visibility: hidden;
 }
 
 .card:hover .card-stack {
@@ -197,7 +196,6 @@
 }
 
 .card:hover .card-title {
-  visibility: visible;
   -webkit-animation: fadeInRight 0.4s ease forwards;
   animation: fadeInRight 0.4s ease forwards;
   -webkit-animation-delay: 0.6s; /* Specific delay for Safari */
