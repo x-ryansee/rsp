@@ -1,8 +1,9 @@
-
 .section {
   height: 100vh;
   scroll-snap-align: start;
+  -webkit-scroll-snap-align: start; /* Safari */
   scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth; /* Safari */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +15,7 @@
   color: white;
   box-sizing: border-box;
   border-radius: 10px;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   cursor: pointer;
   display: flex;
@@ -21,9 +23,10 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  transition: transform 0.6s, opacity 0.3s ease; /* Smooth transition for transformations */
-  font-family: 'Montserrat Alternates';
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.3s ease;
+  transition: transform 0.6s, opacity 0.3s ease;
 }
+
 
 .card::before {
   content: '';
@@ -33,10 +36,11 @@
   width: 100%;
   height: 100%;
   background-color: inherit;
-  opacity: 0; /* Initially fully transparent */
-  transition: opacity 0.3s ease; /* Smooth transition for the opacity */
-  pointer-events: none; /* Ensures it doesn't interfere with clicking */
-  z-index: 0; /* Ensure it's below the text but above the card's background */
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .card:hover::before {
@@ -54,32 +58,36 @@
 }
 
 .card-container {
-  width: 56%; /* Cover the entire width of the parent (.section) */
-  height: 56%; /* Cover the entire viewport height */
+  width: 56%;
+  height: 56%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  margin: 0 auto; /* Center horizontally within .section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
   z-index: 0;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
 .card-container::after {
   content: '';
   position: absolute;
-  width: 10px; /* Small initial size */
+  width: 10px;
   height: 10px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 100%;
   top: 50%;
   left: 50%;
+  -webkit-transform: scale(0) translate(-50%, -50%);
   transform: scale(0) translate(-50%, -50%);
+  -webkit-transform-origin: center center;
   transform-origin: center center;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 0.3s ease;
   transition: transform 0.5s ease-out, opacity 0.3s ease;
   opacity: 1;
-  pointer-events: none; /* Ignore mouse clicks */
+  pointer-events: none;
 }
 
 .card-stack {
@@ -178,37 +186,46 @@
 .card-title, .card-about, .card-stack, .card-button, .card-extra {
   opacity: 0;
   visibility: hidden;
-  /* Remove the transition properties since we are using animation now */
 }
 
 .card:hover .card-stack {
   visibility: visible;
-  animation: fadeInRight 0.4s ease forwards; /* 'forwards' makes the element stay in the final state */
-  animation-delay: 0.3s; /* Adjust the delay times as needed */
+  -webkit-animation: fadeInRight 0.4s ease forwards;
+  animation: fadeInRight 0.4s ease forwards;
+  -webkit-animation-delay: 0.3s; /* Specific delay for Safari */
+  animation-delay: 0.3s; /* Delay for card-stack fade-in */
 }
 
 .card:hover .card-title {
   visibility: visible;
+  -webkit-animation: fadeInRight 0.4s ease forwards;
   animation: fadeInRight 0.4s ease forwards;
-  animation-delay: 0.6s; /* Slightly later than .card-stack */
+  -webkit-animation-delay: 0.6s; /* Specific delay for Safari */
+  animation-delay: 0.6s; /* Delay for card-title fade-in */
 }
 
 .card:hover .card-about {
   visibility: visible;
+  -webkit-animation: fadeInRight 0.4s ease forwards;
   animation: fadeInRight 0.4s ease forwards;
-  animation-delay: 0.9s; /* Slightly later than .card-title */
+  -webkit-animation-delay: 0.9s; /* Specific delay for Safari */
+  animation-delay: 0.9s; /* Delay for card-about fade-in */
 }
 
 .card:hover .card-button {
   visibility: visible;
+  -webkit-animation: fadeInRight 0.4s ease forwards;
   animation: fadeInRight 0.4s ease forwards;
-  animation-delay: 1.2s; /* Slightly later than .card-about */
+  -webkit-animation-delay: 1.2s; /* Specific delay for Safari */
+  animation-delay: 1.2s; /* Delay for card-button fade-in */
 }
 
 .card:hover .card-extra {
   visibility: visible;
+  -webkit-animation: fadeInRight 0.4s ease forwards;
   animation: fadeInRight 0.4s ease forwards;
-  animation-delay: 1.5s; /* Slightly later than .card-button */
+  -webkit-animation-delay: 1.5s; /* Specific delay for Safari */
+  animation-delay: 1.5s; /* Delay for card-extra fade-in */
 }
 
 .card-content {
