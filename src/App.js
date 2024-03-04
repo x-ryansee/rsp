@@ -33,6 +33,7 @@ function debounce(func, wait, immediate) {
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [hasEntered, setHasEntered] = useState(false);
+  const [isTransitionLocked, setIsTransitionLocked] = useState(false);
 
     // Define the function to handle section change
     const handleSectionChange = (newSection) => {
@@ -74,36 +75,53 @@ function App() {
 
   const handleScroll = (event) => {
     if (!hasEntered) {
-      event.preventDefault(); // Prevent scrolling if the user hasn't "entered" yet
+      event.preventDefault();
       return;
     }
-
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const deltaY = event.deltaY;
-
-    // Determine the direction of the scroll
-    const direction = deltaY > 0 ? "down" : "up";
-
-    // Calculate the current section index based on scrollY and windowHeight
-    let currentIndex = Math.round(scrollY / windowHeight);
-
-    // Adjust the index based on the direction
-    if (direction === "down" && currentIndex < sections.length - 1) {
-      currentIndex += 1;
-    } else if (direction === "up" && currentIndex > 0) {
-      currentIndex -= 1;
+  
+    // Early return if a transition is already in progress
+    if (isTransitionLocked) {
+      event.preventDefault();
+      return;
     }
-    
-    // Calculate the newY position to scroll to
-    const newY = currentIndex * windowHeight;
-
-    // Use smoothScrollTo for a smooth transition to the new section
-    smoothScrollTo(newY);
-
+  
+    const deltaY = event.deltaY;
+    const direction = deltaY > 0 ? "down" : "up";
+    let currentIndex = sections.findIndex(section => section === activeSection);
+  
+    // Determine the target section based on the scroll direction
+    if (direction === "down") {
+      if (currentIndex < sections.length - 1) {
+        currentIndex++;
+      } else {
+        // Already at the last section, no further action needed
+        return;
+      }
+    } else if (direction === "up") {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        // Already at the first section, no further action needed
+        return;
+      }
+    }
+  
+    // At this point, we have a valid section to scroll to
+    setIsTransitionLocked(true); // Prevent further scrolls during transition
+  
+    // Calculate the target position for scrolling
+    const targetY = currentIndex * window.innerHeight;
+    smoothScrollTo(targetY);
+  
     // Update the active section state
     setActiveSection(sections[currentIndex]);
+  
+    // Ensure the transition lock is released after a delay
+    setTimeout(() => {
+      setIsTransitionLocked(false);
+    }, 800); // Adjust this delay to match the duration of your smooth scrolling effect
   };
+  
 
   const debouncedHandleScroll = debounce(handleScroll, 100, false);
   
