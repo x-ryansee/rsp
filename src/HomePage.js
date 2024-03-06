@@ -27,7 +27,7 @@ const HomePage = ({ onEnter }) => {
   // Combined handleClick function
   const handleClick = () => {
     setIsShrunk(!isShrunk); // Toggle the isShrunk state
-    onEnter(true); // Signal that the user has "entered" the site
+    onEnter(true);
   };
 
   const containerStyle = {
