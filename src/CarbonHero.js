@@ -17,7 +17,6 @@ const CarbonHero = () => {
           <h3 className="card-about">Sole Developer and Founder</h3>
           <button className="card-button" href="mailto:ryanjosephsee@gmail.com"> Private / Contact for Details </button>
           <h5 className="card-extra">Looking for Collaborators</h5>
-          {/* Replace video with Vimeo embed */}
           <div >
           <iframe 
             src="https://player.vimeo.com/video/914923043?background=1" 
