@@ -18,7 +18,7 @@ const Model = () => {
   useFrame((state, delta) => mixer.current?.update(delta));
 
   return <primitive object={gltf.scene} position={[-1, 0, 0]} scale={[2.5, 2.5, 2.5]} />;
-};Z
+};
 
 const HomePage = ({ onEnter }) => {
   const [isShrunk, setIsShrunk] = useState(false);
