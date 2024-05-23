@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
 import { Element, Events, scrollSpy } from 'react-scroll';
 import ScrollBar from './ScrollBar';
 import HomePage from './HomePage';
@@ -34,6 +35,17 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [hasEntered, setHasEntered] = useState(false);
   const [isTransitionLocked, setIsTransitionLocked] = useState(false);
+
+    // Rollbar configuration
+    const rollbarConfig = {
+      accessToken: '72836d659b4541839db895afd170e056',
+      environment: 'testenv',
+    }
+
+    // function TestError() {
+    //   const a = null
+    //   return a.hello()
+    // }
 
     // Define the function to handle section change
     const handleSectionChange = (newSection) => {
@@ -164,39 +176,44 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Element name="home" >
-        <HomePage onEnter={handleEnter} />
-      </Element>
-      {hasEntered && (
-        <>
-          <Element name="scrollbar">
-          <ScrollBar
-            sections={sections}
-            activeSection={activeSection}
-            onSectionChange={handleSectionChange}
-            onDragStart={handleDragStartFunction} // Ensure this is defined
-            onDragEnd={handleDragEndFunction}
-          />
+    <RollbarProvider config={rollbarConfig}> {/* Wrap the entire application with RollbarProvider */}
+      <ErrorBoundary> {/* Wrap your ErrorBoundary */}
+        {/* <TestError /> */}
+        <div className="App">
+          <Element name="home" >
+            <HomePage onEnter={handleEnter} />
           </Element>
-          <Element name="about">
-            <About />
-          </Element>
-          <Element name="Nerg" className="section">
-            <Nerg />
-          </Element>
-          <Element name="Idylls" className="section">
-            <Idylls />
-          </Element>
-          <Element name="CarbonHero" className="section">
-            <CarbonHero />
-          </Element>
-          <Element name="TourTracker" className="section">
-            <TourTracker />
-          </Element>
-        </>
-      )}
-    </div>
+          {hasEntered && (
+            <>
+              <Element name="scrollbar">
+              <ScrollBar
+                sections={sections}
+                activeSection={activeSection}
+                onSectionChange={handleSectionChange}
+                onDragStart={handleDragStartFunction} // Ensure this is defined
+                onDragEnd={handleDragEndFunction}
+              />
+              </Element>
+              <Element name="about">
+                <About />
+              </Element>
+              <Element name="Nerg" className="section">
+                <Nerg />
+              </Element>
+              <Element name="Idylls" className="section">
+                <Idylls />
+              </Element>
+              <Element name="CarbonHero" className="section">
+                <CarbonHero />
+              </Element>
+              <Element name="TourTracker" className="section">
+                <TourTracker />
+              </Element>
+            </>
+          )}
+        </div>
+      </ErrorBoundary>
+    </RollbarProvider>
   );
 }
 
