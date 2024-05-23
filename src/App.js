@@ -42,10 +42,10 @@ function App() {
       environment: 'testenv',
     }
 
-    // function TestError() {
-    //   const a = null
-    //   return a.hello()
-    // }
+    function TestError() {
+      const a = null
+      return a
+    }
 
     // Define the function to handle section change
     const handleSectionChange = (newSection) => {
@@ -178,7 +178,7 @@ function App() {
   return (
     <RollbarProvider config={rollbarConfig}> {/* Wrap the entire application with RollbarProvider */}
       <ErrorBoundary> {/* Wrap your ErrorBoundary */}
-        {/* <TestError /> */}
+        <TestError />
         <div className="App">
           <Element name="home" >
             <HomePage onEnter={handleEnter} />
