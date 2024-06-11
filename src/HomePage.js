@@ -1,4 +1,4 @@
-import React, { useState,useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { AnimationMixer } from 'three';
@@ -65,11 +65,10 @@ const HomePage = ({ onEnter }) => {
       >
         Enter
       </button>
-      <div style={{...counterScale}}>
-      {isShrunk && <h5 className="card-stack" style={{counterScale, top: '-300px', left: '-580px'}}>React / Blender / ThreeJS</h5>}
-      {isShrunk && <h3 className="card-title" style={{...counterScale, top: '-350px', left: '-580px'}}>Portfolio</h3>}
-      {isShrunk && <h3 className="card-about" style={{...counterScale, top: '-160px', left: '-580px'}}>Sole Developer</h3>}
-      {isShrunk && <button className="card-button" onClick={() => window.open('https://github.com/x-ryansee/rsp', '_blank', 'noopener,noreferrer')} style={{...counterScale, top: '-100px', left: '-580px'}}>Code</button>}
+      <div style={{ ...counterScale }}>
+        {isShrunk && <h5 className="card-stack" style={{ top: '-200px', left: '-480px', fontSize: isShrunk ? 'calc(0.8rem * 1)' : '0.8rem' }}>React / Blender / ThreeJS</h5>}
+        {isShrunk && <h3 className="card-title" style={{ top: '-250px', left: '-500px', fontSize: isShrunk ? 'calc(6rem * 1)' : '6rem' }}>Portfolio</h3>}
+        {isShrunk && <h3 className="card-about" style={{ top: '-60px', left: '-480px', fontSize: isShrunk ? 'calc(1.5rem * 1)' : '1.5rem' }}>Sole Developer</h3>}
       </div>
     </div>
   );

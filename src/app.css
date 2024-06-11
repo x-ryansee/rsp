@@ -105,7 +105,7 @@
 .card-title {
   font-family: 'Montserrat Alternates'; /* Apply the imported font */
   position: absolute;
-  left: -50px; /* Adjust for desired positioning */
+  left: -80px; /* Adjust for desired positioning */
   top: 30px;
   font-size: 6rem;
   color: #FFFFFF; /* Ensuring visibility against the background */

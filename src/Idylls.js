@@ -14,7 +14,7 @@ const Idylls = () => {
         <div className="card-front card-idylls">
           <h5 className="card-stack">React / Ruby on Rails</h5>
           <h1 className="card-title">Idylls</h1>
-          <h3 className="card-about">Sole Developer and Founder</h3>
+          <h3 className="card-about">Sole Developer</h3>
           <div className="card-buttons-container">
           <button className="card-button" onClick={() => window.open('https://tahoenapaidylls.com/', '_blank', 'noopener,noreferrer')}>Website</button>
             <button className="card-button" onClick={() => window.open('https://www.loom.com/share/739a2c76b2a34b598a85bc7fee884584', '_blank', 'noopener,noreferrer')}>Demo</button>

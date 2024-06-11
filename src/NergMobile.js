@@ -13,8 +13,9 @@ const NergMobile = () => {
       <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
         <div className="card-front card-carbon">
           <h5 className="card-stack">React Native / Expo / Figma</h5>
-          <h1 className="card-title">Nerg Mobile App</h1>
-          <h3 className="card-about">Sole Developer and Founder</h3>
+          <h1 className="card-title">NERG Mobile App</h1>
+          <h3 className="card-about">Lead Front End Developer</h3>
+          <button className="card-button" onClick={() => window.open('https://www.nerg.one/', '_blank', 'noopener,noreferrer')}> Website</button>
           <h5 className="card-extra">Set for Future Release</h5>
           <div >
           <iframe 
