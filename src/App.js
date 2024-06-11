@@ -3,6 +3,7 @@ import { Element, Events, scrollSpy } from 'react-scroll';
 import ScrollBar from './ScrollBar';
 import HomePage from './HomePage';
 import About from './About/About';
+import NergMobile from './NergMobile';
 import Nerg from './Nerg';
 import Idylls from './Idylls';
 import CarbonHero from './CarbonHero';
@@ -15,7 +16,7 @@ import 'aos/dist/aos.css';
 
 AOS.init();
 
-const sections = ["home", "Nerg", "Idylls", "CarbonHero", "TourTracker"];
+const sections = ["home", "Nerg Mobile", "Nerg", "Idylls", "CarbonHero", "TourTracker"];
 
 function debounce(func, wait, immediate) {
   let timeout;
@@ -156,7 +157,7 @@ function App() {
     
     // Delay the smooth scroll to ensure the Nerg section is fully mounted and its dimensions are updated
     setTimeout(() => {
-      const nergSectionElement = document.querySelector('[name="Nerg"]');
+      const nergSectionElement = document.querySelector('[name="Nerg Mobile"]');
       if (nergSectionElement) {
         const nergSectionY = nergSectionElement.offsetTop;
         smoothScrollTo(nergSectionY);
@@ -182,6 +183,9 @@ function App() {
               </Element>
               <Element name="about">
                 <About />
+              </Element>
+              <Element name="NergMobile" className="section">
+                <NergMobile />
               </Element>
               <Element name="Nerg" className="section">
                 <Nerg />
