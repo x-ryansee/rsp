@@ -26,7 +26,7 @@ const HomePage = ({ onEnter }) => {
 
   // Combined handleClick function
   const handleClick = () => {
-    setIsShrunk(!isShrunk); // Toggle the isShrunk state
+    setIsShrunk(!isShrunk);
     onEnter(true);
   };
 
