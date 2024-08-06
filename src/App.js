@@ -108,7 +108,6 @@ function App() {
       }
     }
   
-    // At this point, we have a valid section to scroll to
     setIsTransitionLocked(true); // Prevent further scrolls during transition
   
     // Calculate the target position for scrolling
@@ -121,7 +120,7 @@ function App() {
     // Ensure the transition lock is released after a delay
     setTimeout(() => {
       setIsTransitionLocked(false);
-    }, 800); // Adjust this delay to match the duration of your smooth scrolling effect
+    }, 800);
   };
   
 
@@ -135,10 +134,9 @@ function App() {
         window.removeEventListener('wheel', debouncedHandleScroll);
       };
     }
-  }, [hasEntered, debouncedHandleScroll]); // Add hasEntered as a dependency
+  }, [hasEntered, debouncedHandleScroll]);
 
   useEffect(() => {
-    // Initialize scrollSpy
     scrollSpy.update();
 
     // Setup scroll event for scrollSpy
